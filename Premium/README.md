@@ -179,29 +179,12 @@ Learn from the result, refine the system, and make the next iteration stronger.
 
 <div align="center">
 
-<img
-width="49%"
-src="https://github-readme-stats.vercel.app/api?username=parsashafizade&amp;show_icons=true&amp;hide_border=true&amp;bg_color=0B1120&amp;title_color=38BDF8&amp;text_color=94A3B8&amp;icon_color=22D3EE&amp;ring_color=38BDF8&amp;include_all_commits=true&amp;rank_icon=github"
-alt="Parsa Shafizade GitHub statistics"
-/>
-
-<img
-width="49%"
-src="https://github-readme-stats.vercel.app/api/top-langs/?username=parsashafizade&amp;layout=compact&amp;hide_border=true&amp;bg_color=0B1120&amp;title_color=38BDF8&amp;text_color=94A3B8&amp;langs_count=8"
-alt="Parsa Shafizade most used GitHub languages"
-/>
-
-</div>
+<img width="49%" src="./assets/activity/stats.svg" alt="Parsa Shafizade GitHub statistics" />
+<img width="49%" src="./assets/activity/languages.svg" alt="Parsa Shafizade language activity" />
 
 <br />
 
-<div align="center">
-
-<img
-width="100%"
-src="https://github-readme-activity-graph.vercel.app/graph?username=parsashafizade&amp;bg_color=0B1120&amp;color=94A3B8&amp;line=38BDF8&amp;point=22D3EE&amp;area=true&amp;area_color=0F3550&amp;hide_border=true&amp;custom_title=Contribution%20Activity"
-alt="Parsa Shafizade GitHub contribution activity graph"
-/>
+<img width="100%" src="./assets/activity/contributions.svg" alt="Parsa Shafizade contribution activity" />
 
 </div>
 
@@ -212,7 +195,6 @@ alt="Parsa Shafizade GitHub contribution activity graph"
 </div>
 
 <br />
-
 ## Beyond the code
 
 I’m working toward becoming a stronger **Mobile / Software Engineer** who can understand both the engineering system and the product it exists to serve.
