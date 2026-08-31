@@ -1,29 +1,34 @@
 #!/usr/bin/env python3
 
 """
-NEXUS ENGINEERING COMMAND OS
-Gaming Profile SVG Generator
+NEXUS GAMING PROFILE GENERATOR
 
-Generates:
-- hero.svg
-- player-card.svg
-- project-select.svg
-- contribution-map.svg
+Safe REST-only GitHub generator.
 
-using GitHub API data.
+Features:
+- No GraphQL dependency
+- Safe GitHub API fallback
+- Text overflow protection
+- SVG generation
+- GitHub Actions compatible
 """
 
 from pathlib import Path
 from datetime import datetime
 import os
-import requests
 import re
+import requests
 
 
-ROOT = Path(__file__).resolve().parents[1]
-ASSET_DIR = ROOT / "assets"
+ROOT = Path(__file__).resolve().parents[2]
 
-USERNAME = os.getenv("GITHUB_USERNAME", "parsashafizade")
+TEMPLATE_DIR = ROOT / "Gaming" / "templates"
+OUTPUT_DIR = ROOT / "Gaming" / "assets"
+
+USERNAME = os.getenv(
+    "GITHUB_USERNAME",
+    "parsashafizade"
+)
 
 TOKEN = (
     os.getenv("PROFILE_REPOS_TOKEN")
@@ -32,270 +37,193 @@ TOKEN = (
 
 
 HEADERS = {
-    "Authorization": f"Bearer {TOKEN}"
-} if TOKEN else {}
+    "Accept": "application/vnd.github+json"
+}
+
+if TOKEN:
+    HEADERS["Authorization"] = f"Bearer {TOKEN}"
 
 
-def github_graphql(query, variables=None):
-    response = requests.post(
-        "https://api.github.com/graphql",
-        json={
-            "query": query,
-            "variables": variables or {}
-        },
-        headers=HEADERS,
-        timeout=20,
-    )
-
-    response.raise_for_status()
-    return response.json()["data"]
-
-
-def github_rest(endpoint):
-    response = requests.get(
-        f"https://api.github.com{endpoint}",
-        headers=HEADERS,
-        timeout=20,
-    )
-
-    response.raise_for_status()
-    return response.json()
-
-
-def clean_text(value, limit=70):
+def safe_text(value, limit=32):
     if not value:
-        return "Engineering module"
+        return ""
 
-    value = re.sub(r"\s+", " ", value)
+    value = re.sub(
+        r"\s+",
+        " ",
+        str(value)
+    ).strip()
 
-    return value[:limit]
+    if len(value) <= limit:
+        return value
+
+    return value[:limit-3] + "..."
 
 
-def fetch_profile():
+def github_get(url):
+    try:
+        r = requests.get(
+            url,
+            headers=HEADERS,
+            timeout=30
+        )
 
-    query = """
-    query($login:String!){
-      user(login:$login){
-        name
-        login
-        followers{
-          totalCount
-        }
-        repositories(first:100){
-          totalCount
-        }
-      }
-    }
-    """
+        if r.status_code != 200:
+            return None
 
-    return github_graphql(
-        query,
-        {
-            "login": USERNAME
-        }
-    )["user"]
+        return r.json()
+
+    except Exception as e:
+        print(
+            "GitHub API failed:",
+            e
+        )
+        return None
+
+
+def fetch_user():
+
+    data = github_get(
+        f"https://api.github.com/users/{USERNAME}"
+    )
+
+    if not data:
+        return {}
+
+    return data
 
 
 def fetch_repositories():
 
-    repos = github_rest(
-        f"/users/{USERNAME}/repos?per_page=100&sort=pushed"
+    data = github_get(
+        f"https://api.github.com/users/{USERNAME}/repos?per_page=100&sort=pushed"
     )
+
+    if not data:
+        return []
+
+    return data
+
+
+def select_projects(repos):
 
     result = []
 
+    blocked = [
+        "wip",
+        "draft",
+        "test",
+        "temp",
+        "sandbox"
+    ]
+
     for repo in repos:
 
-        topics = []
+        name = repo.get(
+            "name",
+            ""
+        ).lower()
 
-        if repo.get("topics"):
-            topics = repo["topics"]
-
-
-        if "profile-hide" in topics:
+        if any(
+            x in name
+            for x in blocked
+        ):
             continue
 
 
-        if repo["archived"]:
+        if repo.get(
+            "fork"
+        ):
             continue
 
 
-        if repo["fork"]:
-            continue
-
-
-        if repo.get("is_template"):
-            continue
-
-
-        name = repo["name"].lower()
-
-        banned = [
-            "test",
-            "draft",
-            "temp",
-            "wip",
-            "sandbox",
-            "starter"
-        ]
-
-        if any(x in name for x in banned):
+        if repo.get(
+            "archived"
+        ):
             continue
 
 
         result.append(repo)
 
 
-    return sorted(
-        result,
-        key=lambda x: (
-            x.get("stargazers_count",0) * 10
-            + x.get("forks_count",0)
-        ),
-        reverse=True
-    )[:4]
+        if len(result) == 4:
+            break
 
 
-def fetch_contributions():
+    while len(result) < 4:
 
-    query = """
-    query($login:String!){
-      user(login:$login){
-        contributionsCollection{
-          contributionCalendar{
-            totalContributions
-            weeks{
-              contributionDays{
-                contributionCount
-                date
-              }
+        result.append(
+            {
+                "name":"PROJECT SLOT",
+                "description":"Engineering project",
+                "language":""
             }
-          }
-        }
-      }
-    }
-    """
-
-    data = github_graphql(
-        query,
-        {
-            "login": USERNAME
-        }
-    )
-
-    return data["user"]["contributionsCollection"]["contributionCalendar"]
-
-
-def build_grid(calendar):
-
-    cells = []
-
-    x = 340
-    y = 170
-
-    weeks = calendar["weeks"]
-
-    for week in weeks:
-
-        for day in week["contributionDays"]:
-
-            count = day["contributionCount"]
-
-            if count == 0:
-                color = "#101A35"
-
-            elif count < 3:
-                color = "#00E5FF"
-
-            elif count < 7:
-                color = "#A855F7"
-
-            else:
-                color = "#FFE66D"
-
-
-            cells.append(
-                f"""
-                <rect
-                x="{x}"
-                y="{y}"
-                width="8"
-                height="8"
-                rx="2"
-                fill="{color}"
-                />
-                """
-            )
-
-            y += 12
-
-            if y > 250:
-                y = 170
-                x += 12
-
-
-    return "".join(cells)
-
-
-
-def replace_svg(path, values):
-
-    content = path.read_text(
-        encoding="utf-8"
-    )
-
-    for key,value in values.items():
-
-        content = content.replace(
-            "{{" + key + "}}",
-            str(value)
         )
 
+    return result
 
-    path.write_text(
-        content,
-        encoding="utf-8"
+
+def fetch_contribution():
+
+    return {
+        "active_days":"--",
+        "contributions":"--",
+        "grid":""
+    }
+
+
+def build_values():
+
+    user = fetch_user()
+
+    repos = select_projects(
+        fetch_repositories()
     )
-
-
-
-def main():
-
-    profile = fetch_profile()
-
-    repos = fetch_repositories()
-
-    calendar = fetch_contributions()
-
 
     projects = {}
 
-    for index,repo in enumerate(repos,1):
+    for i, repo in enumerate(
+        repos[:4],
+        start=1
+    ):
 
-        projects[f"PROJECT_{index:02}_NAME"] = repo["name"]
-
-        projects[f"PROJECT_{index:02}_DESCRIPTION"] = clean_text(
-            repo.get("description")
+        projects[
+            f"PROJECT_{i}_NAME"
+        ] = safe_text(
+            repo.get(
+                "name",
+                "PROJECT"
+            ),
+            22
         )
 
-        projects[f"PROJECT_{index:02}_LANGUAGE"] = (
-            repo.get("language")
-            or "Software"
+        projects[
+            f"PROJECT_{i}_DESCRIPTION"
+        ] = safe_text(
+            repo.get(
+                "description",
+                ""
+            ),
+            42
         )
 
-        projects[f"PROJECT_{index:02}_STATUS"] = (
-            "ACTIVE"
+        projects[
+            f"PROJECT_{i}_LANGUAGE"
+        ] = safe_text(
+            repo.get(
+                "language",
+                ""
+            ),
+            15
         )
-
-
-    while len(projects) < 16:
-        projects[f"PROJECT_{len(projects)//4+1:02}_NAME"] = "CLASSIFIED"
 
 
     values = {
 
         "PLAYER_NAME":
-            profile.get("name")
+            user.get(
+                "name"
+            )
             or USERNAME,
 
         "USERNAME":
@@ -304,87 +232,94 @@ def main():
         "ROLE":
             "Mobile Application Developer",
 
-        "LEVEL":
-            "ENGINEER",
-
-        "RANK":
-            "PRODUCT BUILDER",
-
         "STATUS":
             "ONLINE",
 
-        "XP_PROGRESS":
-            calendar["totalContributions"],
+        "PLAYER_CLASS":
+            "PRODUCT BUILDER",
 
-        "XP_BAR_WIDTH":
-            min(
-                180,
-                calendar["totalContributions"] // 2
-            ),
+        "RANK":
+            "ENGINEER",
+
+        "LEVEL":
+            "01",
 
         "PRIMARY_SPECIALIZATION":
             "Flutter / AI Assisted Development",
 
-        "PLAYER_CLASS":
-            "Software Engineer",
+        "XP_PROGRESS":
+            "75",
 
-        "MISSION_STATUS":
-            "ACTIVE",
-
-        "SYSTEM_VERSION":
-            "NEXUS-1.0",
-
-        "ENERGY_LEVEL":
-            "100",
+        "XP_BAR_WIDTH":
+            "240",
 
         "CURRENT_MODULE":
             "GitHub Activity",
 
-        "CONTRIBUTIONS":
-            calendar["totalContributions"],
+        "ENERGY_LEVEL":
+            "ACTIVE",
 
-        "ACTIVE_DAYS":
-            sum(
-                1
-                for week in calendar["weeks"]
-                for day in week["contributionDays"]
-                if day["contributionCount"] > 0
-            ),
-
-        "PUBLIC_REPOS":
-            profile["repositories"]["totalCount"],
-
-        "STARS":
-            sum(
-                repo["stargazers_count"]
-                for repo in repos
-            ),
-
-        "FOLLOWERS":
-            profile["followers"]["totalCount"],
-
-        "CURRENT_YEAR":
-            datetime.now().year,
-
-        "CONTRIBUTION_GRID":
-            build_grid(calendar),
+        "SYSTEM_VERSION":
+            "NEXUS v1.0",
 
         **projects
+
     }
 
+    return values
 
-    for svg in [
+
+def generate():
+
+    values = build_values()
+
+
+    files = [
         "hero.svg",
         "player-card.svg",
         "project-select.svg",
         "contribution-map.svg"
-    ]:
+    ]
 
-        replace_svg(
-            ASSET_DIR / svg,
-            values
+
+    for file in files:
+
+        source = (
+            TEMPLATE_DIR /
+            file
+        )
+
+        target = (
+            OUTPUT_DIR /
+            file
+        )
+
+
+        content = source.read_text(
+            encoding="utf-8"
+        )
+
+
+        for key,value in values.items():
+
+            content = content.replace(
+                "{{"+key+"}}",
+                str(value)
+            )
+
+
+        target.write_text(
+            content,
+            encoding="utf-8"
+        )
+
+
+        print(
+            "Generated:",
+            target
         )
 
 
 if __name__ == "__main__":
-    main()
+
+    generate()
