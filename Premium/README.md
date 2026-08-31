@@ -8,15 +8,15 @@
 
 <div align="center">
 
-<a href="https://github.com/parsashafizade">
-  <img src="https://img.shields.io/badge/GitHub-parsashafizade-0B1120?style=flat-square&amp;logo=github&amp;logoColor=F8FAFC" alt="GitHub" />
-</a>
-&nbsp;
 <a href="https://www.linkedin.com/in/parsa-shafizade/">
-  <img src="https://img.shields.io/badge/LinkedIn-Parsa%20Shafizade-0B1120?style=flat-square&amp;logo=linkedin&amp;logoColor=38BDF8" alt="LinkedIn" />
+  <img src="https://img.shields.io/badge/LinkedIn-Parsa%20Shafizade-0B1120?style=flat-square&logo=linkedin&logoColor=38BDF8" alt="LinkedIn" />
 </a>
+
 &nbsp;
-<img src="https://img.shields.io/badge/Focus-Mobile%20%2B%20Product%20%2B%20AI-0B1120?style=flat-square&amp;labelColor=111827&amp;color=0F172A" alt="Mobile Product AI" />
+
+<a href="https://github.com/parsashafizade">
+  <img src="https://img.shields.io/badge/GitHub-parsashafizade-0B1120?style=flat-square&logo=github&logoColor=F8FAFC" alt="GitHub" />
+</a>
 
 </div>
 
@@ -24,11 +24,9 @@
 
 ## About
 
-I’m **Parsa Shafizade**, a Mobile Application Developer focused on building practical digital products from idea to implementation.
+I’m **Parsa Shafizade**, a Mobile Application Developer focused on building practical digital products with **Flutter**, **product thinking**, and **AI-assisted development**.
 
-My primary focus is **cross-platform mobile development with Flutter**, supported by product thinking, software engineering fundamentals, backend understanding, APIs, databases, and AI-assisted development workflows.
-
-I approach development as more than implementing screens or features. I care about understanding the problem, making deliberate product decisions, building maintainable systems, shipping usable solutions, and improving them through iteration.
+I’m interested in the full path from understanding a problem to designing, building, testing, and continuously improving the software behind it.
 
 <br />
 
@@ -48,10 +46,10 @@ I approach development as more than implementing screens or features. I care abo
 
 <br />
 
-- **Mobile Development** — building cross-platform applications with Flutter and strengthening the engineering foundations behind reliable mobile products.
-- **Product Development** — connecting technical execution with actual user problems, product decisions, usability, and practical value.
-- **AI-assisted Development** — using AI as an engineering accelerator for exploration, implementation, debugging, reasoning, and iteration.
-- **Continuous Improvement** — improving architecture, software design, APIs, databases, development workflows, and overall engineering judgment.
+- **Mobile Development** — building reliable cross-platform applications with Flutter and strengthening the engineering foundations behind them.
+- **Product Development** — connecting technical decisions with real user needs, usability, and practical product value.
+- **AI-assisted Development** — using AI to improve exploration, implementation, debugging, reasoning, and development workflows.
+- **Continuous Improvement** — refining architecture, software design, technical judgment, and the way products are built over time.
 
 <br />
 
@@ -63,34 +61,27 @@ I approach development as more than implementing screens or features. I care abo
 
 ## Selected Work
 
-A rotating selection of recent repositories that are mature enough to represent my current work.
+Recent projects that reflect what I’m currently building, exploring, and improving.
 
 <!--
 Premium project cards are generated automatically by:
 Premium/scripts/generate-project-cards.py
-
-The generator evaluates recency, maturity, README quality, code presence,
-development activity and repository visibility before selecting projects.
 
 Private repositories are never surfaced unless explicitly marked
 with the `profile-showcase` topic.
 -->
 
 <p align="center">
+
   <a href="https://github.com/parsashafizade/Gorba"><img width="48%" src="./assets/projects/project-01.svg" alt="Featured project 1" /></a>
   <a href="https://github.com/parsashafizade/OTP-Verification-micro-experience"><img width="48%" src="./assets/projects/project-02.svg" alt="Featured project 2" /></a>
+
   <br />
+
   <a href="https://github.com/parsashafizade/raccoon-login-experience"><img width="48%" src="./assets/projects/project-03.svg" alt="Featured project 3" /></a>
   <a href="https://github.com/parsashafizade/hardware-reserve"><img width="48%" src="./assets/projects/project-04.svg" alt="Featured project 4" /></a>
+
 </p>
-
-<div align="center">
-
-<sub>
-Selected automatically from recent repositories using portfolio-quality and visibility rules.
-</sub>
-
-</div>
 
 <br />
 
@@ -100,29 +91,82 @@ Selected automatically from recent repositories using portfolio-quality and visi
 
 <br />
 
-## Engineering Toolkit
+## Stack & Focus
 
-### Core
+### Mobile Development
 
-<p>
-  <img src="https://img.shields.io/badge/Flutter-0F172A?style=flat-square&amp;logo=flutter&amp;logoColor=38BDF8" alt="Flutter" />
-  <img src="https://img.shields.io/badge/Dart-0F172A?style=flat-square&amp;logo=dart&amp;logoColor=22D3EE" alt="Dart" />
-  <img src="https://img.shields.io/badge/Mobile%20Development-0F172A?style=flat-square&amp;logoColor=F8FAFC" alt="Mobile Development" />
-  <img src="https://img.shields.io/badge/Product%20Development-0F172A?style=flat-square&amp;logoColor=F8FAFC" alt="Product Development" />
-</p>
+<div align="center">
 
-### Supporting
+<img src="https://skillicons.dev/icons?i=flutter,dart" height="46" alt="Flutter and Dart" />
 
-<p>
-  <img src="https://img.shields.io/badge/TypeScript-0F172A?style=flat-square&amp;logo=typescript&amp;logoColor=38BDF8" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-0F172A?style=flat-square&amp;logo=react&amp;logoColor=22D3EE" alt="React" />
-  <img src="https://img.shields.io/badge/C%23-0F172A?style=flat-square&amp;logo=dotnet&amp;logoColor=60A5FA" alt="C Sharp" />
-  <img src="https://img.shields.io/badge/Python-0F172A?style=flat-square&amp;logo=python&amp;logoColor=38BDF8" alt="Python" />
-  <img src="https://img.shields.io/badge/PostgreSQL-0F172A?style=flat-square&amp;logo=postgresql&amp;logoColor=60A5FA" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/REST%20APIs-0F172A?style=flat-square&amp;logo=fastapi&amp;logoColor=22D3EE" alt="REST APIs" />
-  <img src="https://img.shields.io/badge/Git-0F172A?style=flat-square&amp;logo=git&amp;logoColor=94A3B8" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-0F172A?style=flat-square&amp;logo=github&amp;logoColor=F8FAFC" alt="GitHub" />
-</p>
+<br /><br />
+
+**Flutter** · **Dart** · **Cross-Platform Development** · **Mobile Application Development**
+
+</div>
+
+<br />
+
+### Programming Languages
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,cpp,java" height="46" alt="Python, C++ and Java" />
+
+</div>
+
+<br />
+
+### Design & Tools
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=figma,git,github,docker" height="46" alt="Figma, Git, GitHub and Docker" />
+
+</div>
+
+<br />
+
+### AI & Technology Interests
+
+<table>
+<tr>
+
+<td width="33%" valign="top">
+
+<strong>AI Systems</strong>
+
+<br /><br />
+
+AI Agents  
+Generative AI
+
+</td>
+
+<td width="33%" valign="top">
+
+<strong>Development</strong>
+
+<br /><br />
+
+AI-assisted Development  
+Automation Workflows
+
+</td>
+
+<td width="33%" valign="top">
+
+<strong>Product</strong>
+
+<br /><br />
+
+AI in Product Development  
+Product Thinking
+
+</td>
+
+</tr>
+</table>
 
 <br />
 
@@ -136,34 +180,47 @@ Selected automatically from recent repositories using portfolio-quality and visi
 
 <table>
 <tr>
+
 <td width="25%" valign="top">
 
-### 01 · Understand
+<strong>01 · Understand</strong>
 
-Clarify the actual problem before committing to implementation.
+<br /><br />
+
+Understand the problem, user need, and constraints before choosing the solution.
 
 </td>
+
 <td width="25%" valign="top">
 
-### 02 · Build
+<strong>02 · Decide</strong>
 
-Turn product decisions into working software with clear technical foundations.
+<br /><br />
+
+Turn product requirements into deliberate technical and product decisions.
 
 </td>
+
 <td width="25%" valign="top">
 
-### 03 · Ship
+<strong>03 · Build</strong>
 
-Prioritize usable, practical execution over unnecessary complexity.
+<br /><br />
+
+Translate those decisions into practical, maintainable working software.
 
 </td>
+
 <td width="25%" valign="top">
 
-### 04 · Improve
+<strong>04 · Improve</strong>
 
-Learn from the result, refine the system, and make the next iteration stronger.
+<br /><br />
+
+Test, learn, iterate, and make both the product and engineering stronger.
 
 </td>
+
 </tr>
 </table>
 
@@ -195,11 +252,24 @@ Learn from the result, refine the system, and make the next iteration stronger.
 </div>
 
 <br />
-## Beyond the code
 
-I’m working toward becoming a stronger **Mobile / Software Engineer** who can understand both the engineering system and the product it exists to serve.
+## Background
 
-That means continuously improving not only implementation skills, but also architecture, debugging, technical decision-making, product judgment, communication, and the ability to move efficiently from ambiguity to a working product.
+<div align="center">
+
+Computer Engineering student at **Bu-Ali Sina University**
+
+<br /><br />
+
+**Software Engineering** · **Artificial Intelligence** · **Computer Networks** · **Databases** · **Algorithms & Data Structures**
+
+</div>
+
+<br />
+
+I’m working toward becoming a stronger **Mobile / Software Engineer** who understands both the engineering system and the product it exists to serve.
+
+That means continuously improving my implementation skills, architecture, debugging, technical decision-making, product judgment, and ability to move from an idea or problem to useful working software.
 
 <br />
 
@@ -209,18 +279,18 @@ That means continuously improving not only implementation skills, but also archi
 
 <br />
 
-## Let's connect
-
-If you're working on a mobile product, software engineering challenge, or an interesting product-focused project, I’m always open to a useful conversation.
+## Connect
 
 <div align="center">
 
 <a href="https://www.linkedin.com/in/parsa-shafizade/">
-  <img src="https://img.shields.io/badge/Connect%20on%20LinkedIn-38BDF8?style=for-the-badge&amp;logo=linkedin&amp;logoColor=0B1120" alt="Connect with Parsa Shafizade on LinkedIn" />
+  <img src="https://img.shields.io/badge/Connect%20on%20LinkedIn-38BDF8?style=for-the-badge&logo=linkedin&logoColor=0B1120" alt="Connect with Parsa Shafizade on LinkedIn" />
 </a>
+
 &nbsp;
+
 <a href="https://github.com/parsashafizade">
-  <img src="https://img.shields.io/badge/Explore%20my%20GitHub-111827?style=for-the-badge&amp;logo=github&amp;logoColor=F8FAFC" alt="Explore Parsa Shafizade GitHub" />
+  <img src="https://img.shields.io/badge/Explore%20my%20GitHub-111827?style=for-the-badge&logo=github&logoColor=F8FAFC" alt="Explore Parsa Shafizade GitHub" />
 </a>
 
 </div>
@@ -230,7 +300,7 @@ If you're working on a mobile product, software engineering challenge, or an int
 <div align="center">
 
 <sub>
-Mobile Development · Product Thinking · Software Engineering · AI-assisted Development
+Building, learning, and improving one product at a time.
 </sub>
 
 </div>
