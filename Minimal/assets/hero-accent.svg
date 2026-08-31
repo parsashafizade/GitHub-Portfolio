@@ -1,3 +1,736 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="120" viewBox="0 0 800 120">
-  <!-- Placeholder: Minimal Hero SVG -->
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="320" viewBox="0 0 900 320" fill="none" role="img" aria-labelledby="title desc">
+
+<title id="title">Parsa Shafizade — Mobile Application Developer</title> <desc id="desc"> A minimal technical hero interface presenting Parsa Shafizade as a mobile application developer and product-minded builder, with an animated idea-to-build-to-test-to-iterate product development system. </desc> <defs> <!-- BACKGROUND --> <linearGradient id="panel-bg" x1="0" y1="0" x2="900" y2="320" gradientUnits="userSpaceOnUse"> <stop offset="0" stop-color="#0B1120"/> <stop offset="0.55" stop-color="#0D1526"/> <stop offset="1" stop-color="#0F172A"/> </linearGradient>
+<radialGradient id="left-depth" cx="0" cy="0" r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(160 145) rotate(22) scale(340 230)">
+  <stop stop-color="#1E293B" stop-opacity="0.30"/>
+  <stop offset="1" stop-color="#1E293B" stop-opacity="0"/>
+</radialGradient>
+
+<radialGradient id="system-depth" cx="0" cy="0" r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(700 159) scale(225 190)">
+  <stop stop-color="#0EA5E9" stop-opacity="0.10"/>
+  <stop offset="0.56" stop-color="#38BDF8" stop-opacity="0.035"/>
+  <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+</radialGradient>
+
+<linearGradient id="accent-line" x1="82" y1="0" x2="432" y2="0" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#38BDF8"/>
+  <stop offset="0.66" stop-color="#22D3EE"/>
+  <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+</linearGradient>
+
+<linearGradient id="core-fill" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#17243A"/>
+  <stop offset="1" stop-color="#101B2E"/>
+</linearGradient>
+
+<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+  <path d="M24 0H0V24"
+        stroke="#94A3B8"
+        stroke-width="0.65"
+        opacity="0.075"/>
+</pattern>
+
+<clipPath id="panel-clip">
+  <rect x="10" y="10" width="880" height="300" rx="24"/>
+</clipPath>
+
+<filter id="tiny-glow"
+        x="-150%"
+        y="-150%"
+        width="400%"
+        height="400%"
+        color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation="2.2" result="blur"/>
+  <feMerge>
+    <feMergeNode in="blur"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+
+<style>
+  .ui {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .identity-intro {
+    opacity: 0;
+    animation: identityReveal 1.05s cubic-bezier(.2,.7,.2,1) .12s forwards;
+  }
+
+  .identity-line {
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+    animation: drawIdentity 1.35s cubic-bezier(.3,.7,.2,1) .5s forwards;
+  }
+
+  .orbit-motion {
+    transform-origin: 700px 160px;
+    animation: orbitRotate 28s linear infinite;
+  }
+
+  .pulse-primary {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nodePulse 4.8s ease-in-out infinite;
+  }
+
+  .pulse-secondary {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nodePulseSoft 6.4s ease-in-out 1.35s infinite;
+  }
+
+  .status-a {
+    animation: statusFade 5.2s ease-in-out .4s infinite;
+  }
+
+  .status-b {
+    animation: statusFade 6.1s ease-in-out 1.9s infinite;
+  }
+
+  .status-c {
+    animation: statusFade 5.7s ease-in-out 3.1s infinite;
+  }
+
+  .scan-line {
+    animation: scanMove 6.8s ease-in-out infinite;
+  }
+
+  .flow-highlight {
+    stroke-dasharray: 4 118;
+    stroke-dashoffset: 0;
+    animation: routeFlow 7.2s linear infinite;
+  }
+
+  @keyframes identityReveal {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes drawIdentity {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes orbitRotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes nodePulse {
+    0%, 100% {
+      opacity: .78;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.07);
+    }
+  }
+
+  @keyframes nodePulseSoft {
+    0%, 100% {
+      opacity: .58;
+      transform: scale(1);
+    }
+    50% {
+      opacity: .9;
+      transform: scale(1.045);
+    }
+  }
+
+  @keyframes statusFade {
+    0%, 100% { opacity: .28; }
+    42% { opacity: .88; }
+    68% { opacity: .48; }
+  }
+
+  @keyframes scanMove {
+    0%, 12% {
+      transform: translateY(-28px);
+      opacity: 0;
+    }
+    24% {
+      opacity: .36;
+    }
+    76% {
+      opacity: .18;
+    }
+    88%, 100% {
+      transform: translateY(58px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes routeFlow {
+    to {
+      stroke-dashoffset: -122;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .identity-intro,
+    .identity-line,
+    .orbit-motion,
+    .pulse-primary,
+    .pulse-secondary,
+    .status-a,
+    .status-b,
+    .status-c,
+    .scan-line,
+    .flow-highlight {
+      animation: none !important;
+    }
+
+    .identity-intro {
+      opacity: 1;
+      transform: none;
+    }
+
+    .identity-line {
+      stroke-dashoffset: 0;
+    }
+
+    .signal-dot {
+      display: none;
+    }
+  }
+</style>
+</defs> <!-- ========================================================= BACKGROUND ========================================================= -->
+
+<rect x="10" y="10" width="880" height="300" rx="24" fill="url(#panel-bg)" stroke="#334155" stroke-width="1"/>
+
+<g clip-path="url(#panel-clip)"> <rect x="10" y="10" width="880" height="300" fill="url(#left-depth)"/> <rect x="10" y="10" width="880" height="300" fill="url(#system-depth)"/> <rect x="10" y="10" width="880" height="300" fill="url(#grid)"/>
+<!-- restrained structural divisions -->
+<path d="M535 42V278"
+      stroke="#64748B"
+      stroke-width="1"
+      opacity="0.10"/>
+
+<path d="M42 62H65"
+      stroke="#38BDF8"
+      stroke-width="1.5"
+      opacity="0.58"/>
+
+<path d="M835 258H858"
+      stroke="#38BDF8"
+      stroke-width="1.5"
+      opacity="0.34"/>
+
+<path d="M42 258H55V271"
+      stroke="#64748B"
+      stroke-width="1"
+      opacity="0.24"/>
+
+<path d="M858 49H845V36"
+      stroke="#64748B"
+      stroke-width="1"
+      opacity="0.24"/>
+</g> <!-- ========================================================= IDENTITY ========================================================= --> <g class="identity-intro ui"> <!-- eyebrow --> <g> <circle cx="83" cy="77" r="3.5" fill="#38BDF8"/> <circle cx="83" cy="77" r="7.5" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.22"/>
+  <text x="98"
+        y="82"
+        fill="#94A3B8"
+        font-size="12"
+        font-weight="600"
+        letter-spacing="2.1">
+    MOBILE × PRODUCT × AI
+  </text>
+</g>
+
+<!-- name -->
+<text x="80"
+      y="127"
+      fill="#F8FAFC"
+      font-size="34"
+      font-weight="720"
+      letter-spacing="-0.8">
+  PARSA SHAFIZADE
+</text>
+
+<!-- role -->
+<text x="81"
+      y="161"
+      fill="#E2E8F0"
+      font-size="17"
+      font-weight="600">
+  Mobile Application Developer
+</text>
+
+<!-- positioning -->
+<text x="81"
+      y="187"
+      fill="#94A3B8"
+      font-size="14.5"
+      font-weight="450">
+  Product-minded Builder · AI-assisted Development
+</text>
+
+<!-- supporting sentence -->
+<text x="81"
+      y="223"
+      fill="#CBD5E1"
+      font-size="13.5"
+      font-weight="400">
+  Building practical digital products from idea to implementation.
+</text>
+
+<!-- micro labels -->
+<g class="mono" font-size="9.5" font-weight="600" letter-spacing="1.1">
+  <g>
+    <rect x="81" y="246" width="69" height="25" rx="7"
+          fill="#111C30"
+          stroke="#334155"
+          stroke-width="1"/>
+    <text x="96" y="262.5" fill="#94A3B8">FLUTTER</text>
+  </g>
+
+  <g>
+    <rect x="158" y="246" width="75" height="25" rx="7"
+          fill="#111C30"
+          stroke="#334155"
+          stroke-width="1"/>
+    <text x="173" y="262.5" fill="#94A3B8">PRODUCT</text>
+  </g>
+
+  <g>
+    <rect x="241" y="246" width="61" height="25" rx="7"
+          fill="#111C30"
+          stroke="#334155"
+          stroke-width="1"/>
+    <text x="256" y="262.5" fill="#94A3B8">BUILD</text>
+  </g>
+
+  <g>
+    <rect x="310" y="246" width="70" height="25" rx="7"
+          fill="#111C30"
+          stroke="#334155"
+          stroke-width="1"/>
+    <text x="325" y="262.5" fill="#94A3B8">ITERATE</text>
+  </g>
+</g>
+
+<!-- identity accent -->
+<path class="identity-line"
+      d="M81 235H430"
+      stroke="url(#accent-line)"
+      stroke-width="1.5"
+      stroke-linecap="round"/>
+</g> <!-- ========================================================= TECHNICAL SYSTEM ========================================================= --> <g> <!-- system header --> <g class="mono"> <text x="580" y="59" fill="#64748B" font-size="9.5" font-weight="600" letter-spacing="1.6"> PRODUCT DEVELOPMENT LOOP </text>
+  <circle class="status-a"
+          cx="815"
+          cy="55"
+          r="2.4"
+          fill="#38BDF8"/>
+
+  <text x="823"
+        y="59"
+        fill="#64748B"
+        font-size="8.5"
+        letter-spacing="1">
+    ACTIVE
+  </text>
+</g>
+
+<!-- subtle system frame -->
+<rect x="563"
+      y="72"
+      width="286"
+      height="189"
+      rx="18"
+      fill="#0B1323"
+      fill-opacity="0.34"
+      stroke="#334155"
+      stroke-width="1"
+      stroke-opacity="0.52"/>
+
+<!-- internal guide marks -->
+<g stroke="#64748B"
+   stroke-width="1"
+   opacity="0.16">
+  <path d="M581 91H601"/>
+  <path d="M581 91V111"/>
+  <path d="M831 91H811"/>
+  <path d="M831 91V111"/>
+  <path d="M581 243H601"/>
+  <path d="M581 243V223"/>
+  <path d="M831 243H811"/>
+  <path d="M831 243V223"/>
+</g>
+
+<!-- orbit architecture -->
+<circle cx="700"
+        cy="164"
+        r="74"
+        stroke="#475569"
+        stroke-width="1"
+        stroke-dasharray="3 6"
+        opacity="0.40"/>
+
+<circle cx="700"
+        cy="164"
+        r="55"
+        stroke="#334155"
+        stroke-width="1"
+        opacity="0.45"/>
+
+<!-- slowly rotating orbit details -->
+<g class="orbit-motion"
+   stroke="#38BDF8"
+   stroke-linecap="round">
+  <path d="M700 90A74 74 0 0 1 739 101"
+        stroke-width="2"
+        opacity="0.68"/>
+  <path d="M774 164A74 74 0 0 1 765 199"
+        stroke-width="1.5"
+        opacity="0.36"/>
+  <path d="M700 238A74 74 0 0 1 662 227"
+        stroke-width="1.5"
+        opacity="0.34"/>
+  <path d="M626 164A74 74 0 0 1 635 128"
+        stroke-width="1.5"
+        opacity="0.28"/>
+
+  <circle cx="739"
+          cy="101"
+          r="2.4"
+          fill="#38BDF8"
+          stroke="none"
+          opacity="0.76"/>
+
+  <circle cx="662"
+          cy="227"
+          r="1.8"
+          fill="#22D3EE"
+          stroke="none"
+          opacity="0.62"/>
+</g>
+
+<!-- product flow routes -->
+<path id="product-flow"
+      d="M622 119
+         C648 97 672 102 700 112
+         C732 123 760 118 778 142
+         C796 166 781 194 753 205
+         C724 217 705 225 675 216
+         C647 208 628 186 628 160
+         C628 144 634 131 647 121"
+      stroke="#64748B"
+      stroke-width="1.15"
+      opacity="0.34"/>
+
+<path class="flow-highlight"
+      d="M622 119
+         C648 97 672 102 700 112
+         C732 123 760 118 778 142
+         C796 166 781 194 753 205
+         C724 217 705 225 675 216
+         C647 208 628 186 628 160
+         C628 144 634 131 647 121"
+      pathLength="122"
+      stroke="#38BDF8"
+      stroke-width="2"
+      stroke-linecap="round"
+      opacity="0.76"/>
+
+<!-- central build core -->
+<g class="pulse-primary">
+  <circle cx="700"
+          cy="164"
+          r="38"
+          fill="url(#core-fill)"
+          stroke="#38BDF8"
+          stroke-width="1.25"
+          stroke-opacity="0.78"/>
+
+  <circle cx="700"
+          cy="164"
+          r="31"
+          fill="none"
+          stroke="#38BDF8"
+          stroke-width="1"
+          stroke-opacity="0.12"/>
+
+  <!-- code mark -->
+  <path d="M688 153L678 164L688 175"
+        stroke="#38BDF8"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <path d="M712 153L722 164L712 175"
+        stroke="#38BDF8"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <path d="M706 149L694 179"
+        stroke="#94A3B8"
+        stroke-width="1.4"
+        stroke-linecap="round"
+        opacity="0.62"/>
+
+  <text x="700"
+        y="194"
+        text-anchor="middle"
+        class="mono"
+        fill="#E2E8F0"
+        font-size="8.5"
+        font-weight="700"
+        letter-spacing="1.7">
+    BUILD
+  </text>
+</g>
+
+<!-- IDEA NODE -->
+<g>
+  <circle cx="622"
+          cy="119"
+          r="17"
+          fill="#101A2D"
+          stroke="#475569"
+          stroke-width="1"/>
+
+  <circle class="status-b"
+          cx="622"
+          cy="119"
+          r="4"
+          fill="#38BDF8"/>
+
+  <path d="M616 127H628"
+        stroke="#64748B"
+        stroke-width="1"
+        opacity="0.54"/>
+
+  <text x="622"
+        y="95"
+        text-anchor="middle"
+        class="mono"
+        fill="#94A3B8"
+        font-size="8.5"
+        font-weight="600"
+        letter-spacing="1.2">
+    IDEA
+  </text>
+</g>
+
+<!-- TEST NODE -->
+<g class="pulse-secondary">
+  <circle cx="778"
+          cy="142"
+          r="17"
+          fill="#101A2D"
+          stroke="#475569"
+          stroke-width="1"/>
+
+  <path d="M771 142L776 147L785 136"
+        stroke="#38BDF8"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <text x="806"
+        y="145"
+        class="mono"
+        fill="#94A3B8"
+        font-size="8.5"
+        font-weight="600"
+        letter-spacing="1.2">
+    TEST
+  </text>
+</g>
+
+<!-- ITERATE NODE -->
+<g>
+  <circle cx="753"
+          cy="205"
+          r="17"
+          fill="#101A2D"
+          stroke="#475569"
+          stroke-width="1"/>
+
+  <path d="M746 205
+           A8 8 0 0 1 759 199"
+        stroke="#38BDF8"
+        stroke-width="1.6"
+        stroke-linecap="round"/>
+
+  <path d="M758 196L760 201L755 201"
+        fill="#38BDF8"/>
+
+  <path d="M760 205
+           A8 8 0 0 1 747 211"
+        stroke="#64748B"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        opacity="0.74"/>
+
+  <text x="789"
+        y="209"
+        class="mono"
+        fill="#94A3B8"
+        font-size="8.5"
+        font-weight="600"
+        letter-spacing="1">
+    ITERATE
+  </text>
+</g>
+
+<!-- PRODUCT NODE -->
+<g>
+  <circle cx="675"
+          cy="216"
+          r="17"
+          fill="#101A2D"
+          stroke="#475569"
+          stroke-width="1"/>
+
+  <!-- minimal mobile device -->
+  <rect x="669"
+        y="207"
+        width="12"
+        height="18"
+        rx="2.6"
+        stroke="#38BDF8"
+        stroke-width="1.3"/>
+
+  <path d="M672 221H678"
+        stroke="#64748B"
+        stroke-width="1"
+        stroke-linecap="round"/>
+
+  <text x="633"
+        y="239"
+        class="mono"
+        fill="#94A3B8"
+        font-size="8.5"
+        font-weight="600"
+        letter-spacing="1">
+    PRODUCT
+  </text>
+</g>
+
+<!-- route connectors -->
+<g stroke="#64748B"
+   stroke-width="1"
+   opacity="0.26">
+  <path d="M637 126L668 147"/>
+  <path d="M732 156L761 146"/>
+  <path d="M730 189L741 196"/>
+  <path d="M691 198L681 203"/>
+</g>
+
+<!-- signal dot -->
+<circle class="signal-dot"
+        r="3"
+        fill="#22D3EE"
+        filter="url(#tiny-glow)">
+  <animateMotion dur="7.2s"
+                 repeatCount="indefinite"
+                 rotate="auto"
+                 path="M622 119
+                       C648 97 672 102 700 112
+                       C732 123 760 118 778 142
+                       C796 166 781 194 753 205
+                       C724 217 705 225 675 216
+                       C647 208 628 186 628 160
+                       C628 144 634 131 647 121"/>
+  <animate attributeName="opacity"
+           values="0;0.92;0.92;0"
+           keyTimes="0;0.06;0.92;1"
+           dur="7.2s"
+           repeatCount="indefinite"/>
+</circle>
+
+<!-- localized scan -->
+<g clip-path="url(#panel-clip)">
+  <path class="scan-line"
+        d="M653 133H748"
+        stroke="#38BDF8"
+        stroke-width="1"
+        opacity="0">
+    <animate attributeName="stroke-opacity"
+             values="0;0.32;0.12;0"
+             keyTimes="0;0.2;0.78;1"
+             dur="6.8s"
+             repeatCount="indefinite"/>
+  </path>
+</g>
+
+<!-- technical indicators -->
+<g class="mono">
+  <circle class="status-a"
+          cx="590"
+          cy="278"
+          r="2"
+          fill="#38BDF8"/>
+
+  <text x="598"
+        y="281"
+        fill="#64748B"
+        font-size="7.8"
+        letter-spacing="1">
+    THINK
+  </text>
+
+  <path d="M636 278H654"
+        stroke="#475569"
+        stroke-width="1"/>
+
+  <circle class="status-b"
+          cx="661"
+          cy="278"
+          r="2"
+          fill="#38BDF8"/>
+
+  <text x="669"
+        y="281"
+        fill="#64748B"
+        font-size="7.8"
+        letter-spacing="1">
+    BUILD
+  </text>
+
+  <path d="M706 278H724"
+        stroke="#475569"
+        stroke-width="1"/>
+
+  <circle class="status-c"
+          cx="731"
+          cy="278"
+          r="2"
+          fill="#38BDF8"/>
+
+  <text x="739"
+        y="281"
+        fill="#64748B"
+        font-size="7.8"
+        letter-spacing="1">
+    REFINE
+  </text>
+</g>
+</g> <!-- ========================================================= DECORATIVE DETAILS ========================================================= -->
+
+<g class="mono" fill="#475569" font-size="7.5" letter-spacing="1">
+<text x="43" y="296">01 / MINIMAL</text>
+<text x="805" y="296">SYSTEM ONLINE</text>
+</g>
+
+<g fill="#64748B" opacity="0.34"> <circle cx="470" cy="58" r="1.5"/> <circle cx="494" cy="58" r="1.5"/> <circle cx="518" cy="58" r="1.5"/> </g> <g stroke="#334155" stroke-width="1" opacity="0.32"> <path d="M459 278H520"/> <path d="M467 284H512"/> </g> </svg>
+
+

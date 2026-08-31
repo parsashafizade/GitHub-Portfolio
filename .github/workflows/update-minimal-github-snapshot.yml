@@ -1,14 +1,17 @@
-# This file is stored inside the Minimal starter-kit style.
-#
-# GitHub only executes workflows from the repository-root
+# Starter-kit note:
+# GitHub executes workflow files only from the repository-root
 # .github/workflows directory.
 #
-# When using the Minimal style as an actual profile repository,
-# place this workflow at:
+# When installing the Minimal style into a GitHub Profile repository,
+# place this file at:
 #
 # .github/workflows/update-github-snapshot.yml
+#
+# The generator step below supports both:
+#   1. A selected Minimal style copied to repository root.
+#   2. The original starter-kit layout containing Minimal/.
 
-name: Update GitHub Activity
+name: Update GitHub Snapshot
 
 on:
   workflow_dispatch:
@@ -29,7 +32,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: github-activity-${{ github.ref }}
+  group: github-snapshot-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -48,7 +51,7 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate GitHub activity card
+      - name: Generate GitHub snapshot
         id: generate
         shell: bash
         env:
@@ -76,7 +79,7 @@ jobs:
 
           echo "svg_path=$SVG_PATH" >> "$GITHUB_OUTPUT"
 
-      - name: Commit updated card
+      - name: Commit updated snapshot
         shell: bash
         env:
           SVG_PATH: ${{ steps.generate.outputs.svg_path }}
@@ -89,11 +92,10 @@ jobs:
           git add "$SVG_PATH"
 
           if git diff --cached --quiet; then
-            echo "GitHub activity card is already up to date."
+            echo "GitHub snapshot is already up to date."
             exit 0
           fi
 
-          git commit -m "chore: update GitHub activity"
+          git commit -m "chore: update GitHub signal snapshot"
           git pull --rebase
           git push
-
