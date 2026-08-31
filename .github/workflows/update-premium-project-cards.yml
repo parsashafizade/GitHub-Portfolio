@@ -1,0 +1,72 @@
+name: Update Premium project cards
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Daily at 04:17 UTC.
+    - cron: "17 4 * * *"
+
+  push:
+    paths:
+      - "Premium/scripts/generate-project-cards.py"
+      - ".github/workflows/update-premium-project-cards.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: premium-project-cards
+  cancel-in-progress: true
+
+jobs:
+  update-project-cards:
+    name: Generate Premium project cards
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate project cards
+        env:
+          # A PAT / fine-grained token with access to the repositories that
+          # may be considered for the profile should be stored as the
+          # PROFILE_REPOS_TOKEN repository secret.
+          #
+          # If it is unavailable, the generator falls back to GITHUB_TOKEN.
+          PROFILE_REPOS_TOKEN: ${{ secrets.PROFILE_REPOS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python Premium/scripts/generate-project-cards.py
+
+      - name: Stage generated files
+        shell: bash
+        run: |
+          git add Premium/assets/projects/project-01.svg
+          git add Premium/assets/projects/project-02.svg
+          git add Premium/assets/projects/project-03.svg
+          git add Premium/assets/projects/project-04.svg
+
+          if [ -f Premium/README.md ]; then
+            git add Premium/README.md
+          fi
+
+      - name: Commit and push changes
+        shell: bash
+        run: |
+          if git diff --cached --quiet; then
+            echo "Project cards are already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "chore: update Premium project cards"
+          git push

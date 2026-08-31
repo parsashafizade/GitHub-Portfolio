@@ -1,0 +1,163 @@
+<svg width="430" height="180" viewBox="0 0 430 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">raccoon-login-experience</title>
+  <desc id="desc">A playful cross-platform login experience with a reactive raccoon mascot, built with React, TypeScript, and Flutter.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="12" y1="7" x2="418" y2="176">
+      <stop stop-color="#0B1120"/>
+      <stop offset=".56" stop-color="#0D1627"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="edge" x1="0" y1="0" x2="430" y2="180">
+      <stop stop-color="#22D3EE" stop-opacity=".40"/>
+      <stop offset=".55" stop-color="#334155" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity=".18"/>
+    </linearGradient>
+
+    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0V22" stroke="#94A3B8" stroke-opacity=".043"/>
+      <circle cx="1" cy="1" r=".65" fill="#22D3EE" fill-opacity=".045"/>
+    </pattern>
+
+    <clipPath id="clip">
+      <rect x=".5" y=".5" width="429" height="179" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(5px);
+      animation: reveal .65s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    .d2 { animation-delay: .09s; }
+    .d3 { animation-delay: .18s; }
+
+    .pulse { animation: pulse 4.1s ease-in-out infinite 1.1s; }
+
+    .flow {
+      stroke-dasharray: 8 7;
+      animation: flow 7s linear infinite;
+    }
+
+    .scan {
+      animation: scan 7.2s ease-in-out infinite 1.3s;
+    }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: .38; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes flow {
+      to { stroke-dashoffset: -60; }
+    }
+
+    @keyframes scan {
+      0%,22% { transform: translateX(0); opacity: 0; }
+      34% { opacity: .72; }
+      72% { opacity: .24; }
+      82%,100% { transform: translateX(46px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .pulse, .flow, .scan {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <rect x=".5" y=".5" width="429" height="179" rx="18" fill="url(#bg)"/>
+
+  <g clip-path="url(#clip)">
+    <rect width="430" height="180" fill="url(#grid)"/>
+    <circle cx="365" cy="78" r="87" fill="#22D3EE" fill-opacity=".026"/>
+  </g>
+
+  <rect x=".5" y=".5" width="429" height="179" rx="18" stroke="url(#edge)"/>
+
+  <g class="sans reveal">
+    <circle cx="23" cy="23" r="3.2" fill="#22D3EE" class="pulse"/>
+    <text x="34" y="26.5" fill="#64748B" font-size="8.2"
+          font-weight="700" letter-spacing="1.15">RECENT PROJECT · DART</text>
+    
+
+    <text x="20" y="56" fill="#F8FAFC" font-size="16.6"
+          font-weight="760">raccoon-login-experience</text>
+
+    <text x="20" y="79" fill="#CBD5E1" font-size="10.7">
+      A playful cross-platform login experience with a
+    </text>
+
+    <text x="20" y="94" fill="#94A3B8" font-size="10.7">
+      reactive raccoon mascot, built with React,
+    </text>
+  </g>
+
+  <!-- Keep positioning transform separate from animated transform.
+       CSS transform on .reveal would otherwise override translate(302 38). -->
+  <g transform="translate(302 38)">
+    <g class="reveal d2">
+      
+        <rect x="0" y="0" width="92" height="67" rx="11" fill="#0B1626" stroke="#334155"/>
+        <rect x="11" y="10" width="29" height="12" rx="4" fill="#142239" stroke="#22D3EE" stroke-opacity=".38"/>
+        <rect x="11" y="28" width="29" height="12" rx="4" fill="#142239" stroke="#334155"/>
+        <rect x="11" y="46" width="29" height="12" rx="4" fill="#142239" stroke="#334155"/>
+        <circle cx="18" cy="16" r="1.8" fill="#22D3EE" class="pulse"/>
+        <circle cx="18" cy="34" r="1.8" fill="#60A5FA" class="pulse"/>
+        <circle cx="18" cy="52" r="1.8" fill="#22D3EE" class="pulse"/>
+        <path class="flow" d="M41 16H53C60 16 63 21 63 27V43C63 49 67 52 73 52H82" stroke="#60A5FA" stroke-opacity=".55" stroke-width="1.2"/>
+        <rect x="68" y="14" width="13" height="27" rx="4" fill="#111C2D" stroke="#60A5FA" stroke-opacity=".32"/>
+        <path d="M71 21H78M71 26H78M71 31H76" stroke="#94A3B8" stroke-opacity=".60"/>
+        
+    </g>
+  </g>
+
+  <g class="mono reveal d2">
+    
+            <rect x="20.0" y="114" width="82.0" height="20" rx="7"
+                  fill="#101C2E" stroke="#334155"/>
+            <text x="30.0" y="127" fill="#BAE6FD"
+                  font-size="7.5" font-weight="700">Authentication…</text>
+            
+
+            <rect x="108.0" y="114" width="82.0" height="20" rx="7"
+                  fill="#101C2E" stroke="#334155"/>
+            <text x="118.0" y="127" fill="#BAE6FD"
+                  font-size="7.5" font-weight="700">Cross Platform</text>
+            
+
+            <rect x="196.0" y="114" width="40.8" height="20" rx="7"
+                  fill="#101C2E" stroke="#334155"/>
+            <text x="206.0" y="127" fill="#BAE6FD"
+                  font-size="7.5" font-weight="700">Dart</text>
+            
+
+            <rect x="242.8" y="114" width="36.0" height="20" rx="7"
+                  fill="#101C2E" stroke="#334155"/>
+            <text x="252.8" y="127" fill="#BAE6FD"
+                  font-size="7.5" font-weight="700">CSS</text>
+            
+  </g>
+
+  <line x1="20" y1="147" x2="410" y2="147" stroke="#1E293B"/>
+
+  <g class="mono reveal d3">
+    <text x="20" y="165" fill="#64748B" font-size="7.8"
+          letter-spacing=".55">UPDATED AUG 25, 2026</text>
+
+    <text x="326" y="165" fill="#7DD3FC" font-size="8.3"
+          font-weight="700">View Repository ↗</text>
+  </g>
+</svg>

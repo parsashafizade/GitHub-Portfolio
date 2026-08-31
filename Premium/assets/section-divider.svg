@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="1000" height="120" role="img" aria-label="Minimal technical hero accent">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Quiet structural baseline -->
+<path d="M40 65H166L208 43H330L370 65H486" stroke="#64748B" stroke-width="1.25" opacity="0.34"/>
+
+<path d="M486 65H595L634 84H742L790 56H960"
+      stroke="#64748B"
+      stroke-width="1.25"
+      opacity="0.34"/>
+
+<!-- Secondary architectural branches -->
+<path d="M208 43V24H286"
+      stroke="#64748B"
+      stroke-width="1"
+      opacity="0.2"/>
+
+<path d="M370 65V93H438"
+      stroke="#64748B"
+      stroke-width="1"
+      opacity="0.2"/>
+
+<path d="M634 84V37H700"
+      stroke="#64748B"
+      stroke-width="1"
+      opacity="0.2"/>
+
+<path d="M790 56V29H856"
+      stroke="#64748B"
+      stroke-width="1"
+      opacity="0.2"/>
+
+<!-- Small grid / system hints -->
+<g stroke="#64748B" stroke-width="1" opacity="0.13">
+  <path d="M72 48V82"/>
+  <path d="M88 48V82"/>
+  <path d="M56 56H104"/>
+  <path d="M56 72H104"/>
+
+  <path d="M884 44V76"/>
+  <path d="M900 44V76"/>
+  <path d="M868 52H916"/>
+  <path d="M868 68H916"/>
+</g>
+
+<!-- Accent route -->
+<path id="signal-path"
+      d="M166 65L208 43H330L370 65H486H595L634 84H742L790 56"
+      stroke="#38A3C7"
+      stroke-width="1.6"
+      opacity="0.6"/>
+
+<!-- Traveling signal -->
+<circle r="2.7" fill="#38A3C7" stroke="none">
+  <animateMotion dur="7s"
+                 repeatCount="indefinite"
+                 calcMode="spline"
+                 keyTimes="0;1"
+                 keySplines="0.4 0 0.2 1">
+    <mpath href="#signal-path"/>
+  </animateMotion>
+  <animate attributeName="opacity"
+           values="0;0.9;0.9;0"
+           keyTimes="0;0.08;0.9;1"
+           dur="7s"
+           repeatCount="indefinite"/>
+</circle>
+
+<!-- Nodes -->
+<g stroke="#64748B" stroke-width="1.2">
+  <circle cx="166" cy="65" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="208" cy="43" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="330" cy="43" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="370" cy="65" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="486" cy="65" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="595" cy="65" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="634" cy="84" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="742" cy="84" r="3.2" fill="#0F172A" opacity="0.72"/>
+  <circle cx="790" cy="56" r="3.2" fill="#0F172A" opacity="0.72"/>
+</g>
+
+<!-- Key live nodes -->
+<circle cx="208" cy="43" r="4" fill="#38A3C7" stroke="none">
+  <animate attributeName="r"
+           values="3.2;4.8;3.2"
+           dur="4.8s"
+           repeatCount="indefinite"/>
+  <animate attributeName="opacity"
+           values="0.55;0.95;0.55"
+           dur="4.8s"
+           repeatCount="indefinite"/>
+</circle>
+
+<circle cx="742" cy="84" r="4" fill="#38A3C7" stroke="none">
+  <animate attributeName="r"
+           values="3.2;4.6;3.2"
+           dur="5.6s"
+           begin="1.2s"
+           repeatCount="indefinite"/>
+  <animate attributeName="opacity"
+           values="0.5;0.9;0.5"
+           dur="5.6s"
+           begin="1.2s"
+           repeatCount="indefinite"/>
+</circle>
+
+<!-- Faint heartbeat rings -->
+<circle cx="208" cy="43" r="5.5"
+        stroke="#38A3C7"
+        stroke-width="1"
+        opacity="0">
+  <animate attributeName="r"
+           values="4.5;10"
+           dur="4.8s"
+           repeatCount="indefinite"/>
+  <animate attributeName="opacity"
+           values="0.22;0"
+           dur="4.8s"
+           repeatCount="indefinite"/>
+</circle>
+
+<circle cx="742" cy="84" r="5.5"
+        stroke="#38A3C7"
+        stroke-width="1"
+        opacity="0">
+  <animate attributeName="r"
+           values="4.5;9.5"
+           dur="5.6s"
+           begin="1.2s"
+           repeatCount="indefinite"/>
+  <animate attributeName="opacity"
+           values="0.2;0"
+           dur="5.6s"
+           begin="1.2s"
+           repeatCount="indefinite"/>
+</circle>
+
+<!-- Tiny anchor points -->
+<g fill="#64748B" stroke="none">
+  <circle cx="40" cy="65" r="1.7" opacity="0.4"/>
+  <circle cx="286" cy="24" r="1.7" opacity="0.3"/>
+  <circle cx="438" cy="93" r="1.7" opacity="0.3"/>
+  <circle cx="700" cy="37" r="1.7" opacity="0.3"/>
+  <circle cx="856" cy="29" r="1.7" opacity="0.3"/>
+  <circle cx="960" cy="56" r="1.7" opacity="0.4"/>
+</g>
+
+<!-- Restrained ambient activity -->
+<g fill="#38A3C7" stroke="none">
+  <circle cx="330" cy="43" r="1.8" opacity="0.25">
+    <animate attributeName="opacity"
+             values="0.18;0.55;0.18"
+             dur="6.4s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="595" cy="65" r="1.8" opacity="0.25">
+    <animate attributeName="opacity"
+             values="0.2;0.5;0.2"
+             dur="7.2s"
+             begin="0.8s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="790" cy="56" r="1.8" opacity="0.25">
+    <animate attributeName="opacity"
+             values="0.16;0.48;0.16"
+             dur="5.8s"
+             begin="1.7s"
+             repeatCount="indefinite"/>
+  </circle>
+</g>
+
+</g> </svg>

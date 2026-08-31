@@ -24,60 +24,11 @@ Building practical digital products with **Flutter**, **product thinking**, and 
 
 ## Featured Project
 
-<!-- EDIT: FEATURED PROJECT -->
 
-### Metric
-
-A mobile application built from **idea to implementation**, focused on simple, useful, and user-centered digital experiences.
-
-<table>
-<tr>
-
-<td width="33%" valign="top">
-
-<strong>Product</strong>
-
-- Feature planning
-- Product decisions
-- User flows
-- Understanding user needs
-
-</td>
-
-<td width="33%" valign="top">
-
-<strong>UI / UX</strong>
-
-- Interface design
-- Experience refinement
-- Simple interactions
-- Usability improvements
-
-</td>
-
-<td width="33%" valign="top">
-
-<strong>Development</strong>
-
-- Flutter development
-- Testing & iteration
-- Product implementation
-- Continuous improvement
-
-</td>
-
-</tr>
-</table>
 
 <div align="center">
-
-<img src="https://skillicons.dev/icons?i=flutter,dart,figma,git" height="42" alt="Metric development stack" />
-
+  <img src="./assets/metric.svg" width="100%" alt="" />
 </div>
-
-<!-- END EDIT -->
-
-<br/>
 
 <div align="center">
   <img src="./assets/section-divider.svg" width="50%" alt="" />

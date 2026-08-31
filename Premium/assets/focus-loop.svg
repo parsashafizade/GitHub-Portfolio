@@ -1,0 +1,214 @@
+<svg width="100%" viewBox="0 0 900 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Parsa Shafizade — What I'm Focused On</title>
+  <desc id="desc">A premium systems map showing four connected focus areas: mobile development, product development, AI-assisted development, and continuous improvement, organized around an idea-to-product execution loop.</desc>
+
+  <defs>
+    <linearGradient id="focus-bg" x1="38" y1="10" x2="862" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1120"/>
+      <stop offset="0.54" stop-color="#0D1627"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="focus-edge" x1="0" y1="0" x2="900" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity="0.36"/>
+      <stop offset="0.5" stop-color="#334155" stop-opacity="0.52"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="core-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#10233A"/>
+      <stop offset="1" stop-color="#0D1728"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="250" y1="0" x2="650" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="0.45" stop-color="#22D3EE" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#818CF8" stop-opacity="0.28"/>
+    </linearGradient>
+    <radialGradient id="focus-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(450 121) rotate(90) scale(126 240)">
+      <stop stop-color="#38BDF8" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="focus-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" stroke="#94A3B8" stroke-opacity="0.045"/>
+      <circle cx="1" cy="1" r="0.75" fill="#22D3EE" fill-opacity="0.05"/>
+    </pattern>
+    <clipPath id="focus-clip">
+      <rect x="1" y="1" width="898" height="238" rx="22"/>
+    </clipPath>
+    <filter id="focus-shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#020617" flood-opacity="0.32"/>
+    </filter>
+    <filter id="focus-dot-glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .focus-in { opacity: 0; transform: translateY(6px); animation: focusIn .7s cubic-bezier(.2,.8,.2,1) forwards; }
+    .f1 { animation-delay: .08s; }
+    .f2 { animation-delay: .16s; }
+    .f3 { animation-delay: .24s; }
+    .f4 { animation-delay: .32s; }
+    .loop-draw { stroke-dasharray: 760; stroke-dashoffset: 760; animation: loopDraw 1.4s cubic-bezier(.4,0,.2,1) .26s forwards; }
+    .core-pulse { animation: corePulse 4.4s ease-in-out infinite 1.25s; }
+    .node-pulse-a { animation: nodePulse 3.8s ease-in-out infinite 1.4s; }
+    .node-pulse-b { animation: nodePulse 4.6s ease-in-out infinite 2s; }
+    .runner { animation: runTop 7.8s cubic-bezier(.45,.05,.55,.95) infinite 1.2s; }
+    .runner-2 { animation: runBottom 9.6s cubic-bezier(.45,.05,.55,.95) infinite 2.3s; }
+    .sweep { animation: sweep 8.5s ease-in-out infinite 1.6s; }
+
+    @keyframes focusIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes loopDraw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes corePulse {
+      0%,100% { opacity: .35; }
+      50% { opacity: .78; }
+    }
+
+    @keyframes nodePulse {
+      0%,100% { opacity: .48; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes runTop {
+      0% { transform: translate(0,0); opacity: 0; }
+      8% { opacity: 1; }
+      44% { transform: translate(257px,0); opacity: 1; }
+      51% { transform: translate(257px,58px); opacity: 1; }
+      88% { transform: translate(0,58px); opacity: 1; }
+      100% { transform: translate(0,0); opacity: 0; }
+    }
+
+    @keyframes runBottom {
+      0% { transform: translate(0,0); opacity: 0; }
+      9% { opacity: .9; }
+      45% { transform: translate(-257px,0); opacity: .9; }
+      53% { transform: translate(-257px,-58px); opacity: .9; }
+      88% { transform: translate(0,-58px); opacity: .9; }
+      100% { transform: translate(0,0); opacity: 0; }
+    }
+
+    @keyframes sweep {
+      0%,24% { transform: translateX(0); opacity: 0; }
+      32% { opacity: .48; }
+      62% { opacity: .24; }
+      70%,100% { transform: translateX(88px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .focus-in,
+      .loop-draw,
+      .core-pulse,
+      .node-pulse-a,
+      .node-pulse-b,
+      .runner,
+      .runner-2,
+      .sweep {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        stroke-dashoffset: 0 !important;
+      }
+    }
+  </style>
+
+  <!-- Shared premium panel -->
+  <rect x="1" y="1" width="898" height="238" rx="22" fill="url(#focus-bg)"/>
+  <g clip-path="url(#focus-clip)">
+    <rect x="1" y="1" width="898" height="238" fill="url(#focus-grid)"/>
+    <rect x="170" y="0" width="560" height="240" fill="url(#focus-glow)"/>
+    <path d="M-30 196C132 156 217 174 321 231" stroke="#38BDF8" stroke-opacity="0.028" stroke-width="48"/>
+    <path d="M606 -12C710 50 787 50 936 17" stroke="#6366F1" stroke-opacity="0.024" stroke-width="44"/>
+  </g>
+  <rect x="1" y="1" width="898" height="238" rx="22" stroke="url(#focus-edge)"/>
+
+  <!-- Section marker -->
+  <g class="mono focus-in f1">
+    <circle cx="39" cy="31" r="3.2" fill="#22D3EE" class="node-pulse-a"/>
+    <text x="51" y="34.5" fill="#64748B" font-size="8.5" font-weight="700" letter-spacing="1.5">CURRENT FOCUS / EXECUTION SYSTEM</text>
+    <text x="788" y="34.5" fill="#475569" font-size="8" letter-spacing="1.2">01 — 04</text>
+  </g>
+
+  <!-- Four focus modules arranged as a systems lattice -->
+  <g filter="url(#focus-shadow)" class="sans">
+    <!-- Top-left: Mobile -->
+    <g class="focus-in f1">
+      <rect x="95" y="62" width="224" height="60" rx="13" fill="#101A2B" fill-opacity="0.95" stroke="#334155"/>
+      <rect x="95" y="62" width="4" height="60" rx="2" fill="#38BDF8" fill-opacity="0.86"/>
+      <text x="116" y="84" fill="#7DD3FC" font-size="9.3" font-weight="760" letter-spacing="1.1">01 · MOBILE DEVELOPMENT</text>
+      <text x="116" y="104" fill="#CBD5E1" font-size="11.2" font-weight="540">Cross-platform systems · Flutter</text>
+      <circle cx="298" cy="81" r="3.4" fill="#38BDF8" class="node-pulse-a"/>
+    </g>
+
+    <!-- Top-right: Product -->
+    <g class="focus-in f2">
+      <rect x="581" y="62" width="224" height="60" rx="13" fill="#101A2B" fill-opacity="0.95" stroke="#334155"/>
+      <rect x="801" y="62" width="4" height="60" rx="2" fill="#22D3EE" fill-opacity="0.8"/>
+      <text x="601" y="84" fill="#67E8F9" font-size="9.3" font-weight="760" letter-spacing="1.1">02 · PRODUCT DEVELOPMENT</text>
+      <text x="601" y="104" fill="#CBD5E1" font-size="11.2" font-weight="540">Problem framing · usable value</text>
+      <circle cx="786" cy="81" r="3.4" fill="#22D3EE" class="node-pulse-b"/>
+    </g>
+
+    <!-- Bottom-left: Improvement -->
+    <g class="focus-in f4">
+      <rect x="95" y="149" width="224" height="60" rx="13" fill="#101A2B" fill-opacity="0.95" stroke="#334155"/>
+      <rect x="95" y="149" width="4" height="60" rx="2" fill="#60A5FA" fill-opacity="0.72"/>
+      <text x="116" y="171" fill="#93C5FD" font-size="9.3" font-weight="760" letter-spacing="1.1">04 · CONTINUOUS IMPROVEMENT</text>
+      <text x="116" y="191" fill="#CBD5E1" font-size="11.2" font-weight="540">Learn · refine · repeat</text>
+      <circle cx="298" cy="168" r="3.4" fill="#60A5FA" class="node-pulse-b"/>
+    </g>
+
+    <!-- Bottom-right: AI-assisted -->
+    <g class="focus-in f3">
+      <rect x="581" y="149" width="224" height="60" rx="13" fill="#101A2B" fill-opacity="0.95" stroke="#334155"/>
+      <rect x="801" y="149" width="4" height="60" rx="2" fill="#818CF8" fill-opacity="0.66"/>
+      <text x="601" y="171" fill="#A5B4FC" font-size="9.3" font-weight="760" letter-spacing="1.1">03 · AI-ASSISTED DEVELOPMENT</text>
+      <text x="601" y="191" fill="#CBD5E1" font-size="11.2" font-weight="540">Faster exploration · stronger execution</text>
+      <circle cx="786" cy="168" r="3.4" fill="#818CF8" class="node-pulse-a"/>
+    </g>
+  </g>
+
+  <!-- Central product-build core -->
+  <g class="sans">
+    <rect x="359" y="77" width="182" height="117" rx="22" fill="url(#core-fill)" stroke="#38BDF8" stroke-opacity="0.38"/>
+    <rect x="372" y="90" width="156" height="91" rx="16" fill="#0B1525" stroke="#1E293B"/>
+    <circle cx="450" cy="111" r="15" fill="#102A40" stroke="#38BDF8" stroke-opacity="0.52"/>
+    <circle cx="450" cy="111" r="5" fill="#22D3EE" fill-opacity="0.82" class="core-pulse"/>
+    <text x="450" y="142" text-anchor="middle" fill="#F8FAFC" font-size="13.2" font-weight="760" letter-spacing="0.3">FROM IDEA TO PRODUCT</text>
+    <text x="450" y="160" text-anchor="middle" fill="#64748B" font-size="8.4" font-weight="650" letter-spacing="1.35">THINK · BUILD · LEARN</text>
+  </g>
+
+  <!-- Connected execution loop -->
+  <g>
+    <path class="loop-draw" d="M319 91H347C354 91 359 96 359 103V113M541 113V103C541 96 546 91 553 91H581M693 122V137C693 144 688 149 681 149H553C546 149 541 154 541 161V165M359 165V161C359 154 354 149 347 149H219C212 149 207 144 207 137V122" stroke="url(#trace)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="loop-draw" d="M319 179H342C352 179 359 172 359 162M541 162C541 172 548 179 558 179H581" stroke="#334155" stroke-width="1.15" stroke-linecap="round"/>
+
+    <!-- Moving loop indicators -->
+    <circle class="runner" cx="323" cy="91" r="3.2" fill="#E0F2FE" filter="url(#focus-dot-glow)"/>
+    <circle class="runner-2" cx="577" cy="179" r="2.7" fill="#A5B4FC" filter="url(#focus-dot-glow)"/>
+  </g>
+
+  <!-- Micro system rail -->
+  <g class="mono">
+    <rect x="386" y="51" width="128" height="7" rx="3.5" fill="#111C2D"/>
+    <rect x="386" y="51" width="92" height="7" rx="3.5" fill="#38BDF8" fill-opacity="0.16"/>
+    <rect class="sweep" x="386" y="51" width="24" height="7" rx="3.5" fill="#67E8F9" fill-opacity="0.28"/>
+
+    <text x="367" y="221" fill="#475569" font-size="7.6" letter-spacing="1.25">MOBILE ↔ PRODUCT ↔ AI ↔ ITERATION</text>
+  </g>
+
+  <!-- Quiet alignment marks -->
+  <g stroke="#38BDF8" stroke-opacity="0.14" stroke-linecap="round">
+    <path d="M72 62H82M77 57V67"/>
+    <path d="M818 209H828M823 204V214"/>
+  </g>
+</svg>

@@ -1,0 +1,522 @@
+<svg
+  width="100%"
+  height="240"
+  viewBox="0 0 900 240"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Parsa Shafizade — Premium Focus Loop</title>
+  <desc id="desc">
+    Premium systems diagram connecting Mobile Development, Product Development,
+    AI-assisted Development, and Continuous Improvement around Metric and a continuous product learning loop.
+  </desc>
+
+  <defs>
+    <!-- Background -->
+    <linearGradient id="focus-bg" x1="80" y1="10" x2="845" y2="245" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1120"/>
+      <stop offset="0.48" stop-color="#0D1526"/>
+      <stop offset="1" stop-color="#09111F"/>
+    </linearGradient>
+
+    <radialGradient id="focus-core-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(450 121) rotate(90) scale(110 220)">
+      <stop stop-color="#22D3EE" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="focus-accent" x1="300" y1="60" x2="610" y2="194" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="0.48" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+
+    <linearGradient id="focus-scan" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Grid -->
+    <pattern id="focus-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" stroke="#94A3B8" stroke-opacity="0.035"/>
+      <circle cx="0" cy="0" r="1" fill="#94A3B8" fill-opacity="0.05"/>
+    </pattern>
+
+    <pattern id="focus-micro-grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M10 0H0V10" stroke="#38BDF8" stroke-opacity="0.04"/>
+    </pattern>
+
+    <filter id="focus-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <clipPath id="focus-panel-clip">
+      <rect width="900" height="240" rx="22"/>
+    </clipPath>
+
+    <clipPath id="focus-core-clip">
+      <rect x="380" y="72" width="140" height="98" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .focus-reveal {
+      opacity: 0;
+      transform: translateY(5px);
+      animation: focusReveal 850ms cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    .focus-reveal-2 {
+      opacity: 0;
+      transform: translateY(5px);
+      animation: focusReveal 850ms 160ms cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    .focus-reveal-3 {
+      opacity: 0;
+      transform: translateY(5px);
+      animation: focusReveal 850ms 320ms cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    .focus-loop-draw {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: focusLoopDraw 1800ms 380ms cubic-bezier(.2,.7,.2,1) forwards;
+    }
+
+    .focus-core-pulse {
+      transform-origin: center;
+      animation: focusCorePulse 5.6s 2s ease-in-out infinite;
+    }
+
+    .focus-node-pulse {
+      transform-origin: center;
+      animation: focusNodePulse 5s ease-in-out infinite;
+    }
+
+    .focus-node-pulse-delay {
+      transform-origin: center;
+      animation: focusNodePulse 5.8s 2.4s ease-in-out infinite;
+    }
+
+    .focus-ambient {
+      animation: focusAmbient 7s ease-in-out infinite;
+    }
+
+    .focus-scan {
+      animation: focusScan 6.5s 2.5s ease-in-out infinite;
+    }
+
+    .focus-signal {
+      animation: focusSignalVisibility 8.8s 1.6s ease-in-out infinite;
+    }
+
+    @keyframes focusReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes focusLoopDraw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes focusCorePulse {
+      0%, 70%, 100% { opacity: .08; transform: scale(.96); }
+      82% { opacity: .24; transform: scale(1.05); }
+      90% { opacity: .12; transform: scale(1); }
+    }
+
+    @keyframes focusNodePulse {
+      0%, 76%, 100% { opacity: .3; transform: scale(.88); }
+      84% { opacity: .85; transform: scale(1.2); }
+      92% { opacity: .42; transform: scale(1); }
+    }
+
+    @keyframes focusAmbient {
+      0%, 100% { opacity: .12; }
+      50% { opacity: .38; }
+    }
+
+    @keyframes focusScan {
+      0%, 15% { transform: translateX(-90px); opacity: 0; }
+      26% { opacity: .55; }
+      62% { opacity: .2; }
+      80%, 100% { transform: translateX(210px); opacity: 0; }
+    }
+
+    @keyframes focusSignalVisibility {
+      0%, 10%, 100% { opacity: 0; }
+      16%, 82% { opacity: 1; }
+      90% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .focus-reveal,
+      .focus-reveal-2,
+      .focus-reveal-3,
+      .focus-loop-draw,
+      .focus-core-pulse,
+      .focus-node-pulse,
+      .focus-node-pulse-delay,
+      .focus-ambient,
+      .focus-scan,
+      .focus-signal {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        stroke-dashoffset: 0 !important;
+      }
+
+      .motion-only {
+        display: none;
+      }
+    }
+  </style>
+
+  <g clip-path="url(#focus-panel-clip)">
+    <!-- Main panel -->
+    <rect width="900" height="240" fill="url(#focus-bg)"/>
+    <rect width="900" height="240" fill="url(#focus-grid)"/>
+    <rect width="900" height="240" fill="url(#focus-core-glow)"/>
+
+    <!-- Editorial framing -->
+    <path d="M26 39H874" stroke="#94A3B8" stroke-opacity="0.04"/>
+    <path d="M26 201H874" stroke="#94A3B8" stroke-opacity="0.04"/>
+    <path d="M450 24V42" stroke="#64748B" stroke-opacity="0.16"/>
+    <path d="M450 198V216" stroke="#64748B" stroke-opacity="0.16"/>
+
+    <!-- Small section marker -->
+    <g class="focus-reveal">
+      <circle cx="35" cy="27" r="2.8" fill="#22D3EE"/>
+      <text
+        x="46"
+        y="30"
+        class="mono"
+        fill="#64748B"
+        font-size="8.5"
+        font-weight="700"
+        letter-spacing="1"
+      >CURRENT FOCUS / PRODUCT LOOP</text>
+
+      <text
+        x="865"
+        y="30"
+        class="mono"
+        fill="#475569"
+        font-size="8"
+        text-anchor="end"
+        letter-spacing=".8"
+      >BUILD · LEARN · IMPROVE</text>
+    </g>
+
+    <!-- Underlying loop rail -->
+    <path
+      id="focus-loop-path"
+      d="M272 77
+         H342
+         C363 77 375 65 390 57
+         C407 48 431 47 450 47
+         C471 47 492 49 509 57
+         C527 66 537 77 559 77
+         H628
+         C655 77 670 92 670 117
+         V123
+         C670 148 655 163 628 163
+         H559
+         C537 163 527 174 509 183
+         C492 191 471 193 450 193
+         C431 193 407 192 390 183
+         C375 175 363 163 342 163
+         H272
+         C245 163 230 148 230 123
+         V117
+         C230 92 245 77 272 77Z"
+      stroke="#334155"
+      stroke-opacity="0.2"
+      stroke-width="9"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M272 77
+         H342
+         C363 77 375 65 390 57
+         C407 48 431 47 450 47
+         C471 47 492 49 509 57
+         C527 66 537 77 559 77
+         H628
+         C655 77 670 92 670 117
+         V123
+         C670 148 655 163 628 163
+         H559
+         C537 163 527 174 509 183
+         C492 191 471 193 450 193
+         C431 193 407 192 390 183
+         C375 175 363 163 342 163
+         H272
+         C245 163 230 148 230 123
+         V117
+         C230 92 245 77 272 77Z"
+      stroke="url(#focus-accent)"
+      stroke-opacity="0.56"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="focus-loop-draw"
+    />
+
+    <!-- Structural connector lines -->
+    <g opacity="0.55">
+      <path d="M299 77V63" stroke="#64748B" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+      <path d="M601 77V63" stroke="#64748B" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+      <path d="M299 163V177" stroke="#64748B" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+      <path d="M601 163V177" stroke="#64748B" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+    </g>
+
+    <!-- Left top module: Mobile -->
+    <g class="focus-reveal-2">
+      <rect x="67" y="53" width="182" height="59" rx="13"
+        fill="#0D1728" stroke="#334155" stroke-opacity="0.72"/>
+
+      <rect x="76" y="62" width="31" height="31" rx="8"
+        fill="#0B1627" stroke="#38BDF8" stroke-opacity="0.22"/>
+
+      <!-- Phone glyph -->
+      <rect x="86" y="67" width="11" height="20" rx="2.4"
+        stroke="#38BDF8" stroke-opacity="0.82" stroke-width="1.25"/>
+      <path d="M89 70H94" stroke="#38BDF8" stroke-opacity="0.5" stroke-linecap="round"/>
+      <circle cx="91.5" cy="84" r=".8" fill="#22D3EE"/>
+
+      <text x="118" y="73" class="mono" fill="#38BDF8"
+        font-size="7.8" font-weight="700" letter-spacing=".85">01 / MOBILE</text>
+
+      <text x="118" y="89" class="sans" fill="#E2E8F0"
+        font-size="11.5" font-weight="650">Mobile Development</text>
+
+      <text x="118" y="102" class="sans" fill="#64748B"
+        font-size="8.5">Flutter · practical mobile systems</text>
+
+      <circle cx="249" cy="77" r="2.7" fill="#38BDF8"/>
+      <circle cx="249" cy="77" r="8" fill="#38BDF8" fill-opacity="0.06"
+        class="focus-node-pulse"/>
+    </g>
+
+    <!-- Right top module: Product -->
+    <g class="focus-reveal-2">
+      <rect x="651" y="53" width="182" height="59" rx="13"
+        fill="#0D1728" stroke="#334155" stroke-opacity="0.72"/>
+
+      <rect x="660" y="62" width="31" height="31" rx="8"
+        fill="#0B1627" stroke="#22D3EE" stroke-opacity="0.22"/>
+
+      <!-- Product blocks glyph -->
+      <rect x="668" y="69" width="7" height="7" rx="1.6"
+        fill="#22D3EE" fill-opacity="0.28" stroke="#22D3EE" stroke-opacity="0.8"/>
+      <rect x="677" y="69" width="7" height="7" rx="1.6"
+        stroke="#22D3EE" stroke-opacity="0.65"/>
+      <rect x="668" y="78" width="16" height="7" rx="1.8"
+        stroke="#22D3EE" stroke-opacity="0.65"/>
+
+      <text x="702" y="73" class="mono" fill="#67E8F9"
+        font-size="7.8" font-weight="700" letter-spacing=".85">02 / PRODUCT</text>
+
+      <text x="702" y="89" class="sans" fill="#E2E8F0"
+        font-size="11.5" font-weight="650">Product Development</text>
+
+      <text x="702" y="102" class="sans" fill="#64748B"
+        font-size="8.5">Problem framing · product thinking</text>
+
+      <circle cx="651" cy="77" r="2.7" fill="#22D3EE"/>
+      <circle cx="651" cy="77" r="8" fill="#22D3EE" fill-opacity="0.06"
+        class="focus-node-pulse-delay"/>
+    </g>
+
+    <!-- Left bottom module: Improvement -->
+    <g class="focus-reveal-3">
+      <rect x="67" y="128" width="182" height="59" rx="13"
+        fill="#0D1728" stroke="#334155" stroke-opacity="0.72"/>
+
+      <rect x="76" y="137" width="31" height="31" rx="8"
+        fill="#0B1627" stroke="#3B82F6" stroke-opacity="0.22"/>
+
+      <!-- Iteration glyph -->
+      <path d="M85 151C85 145.5 89.5 142 94 142C97 142 99 143 101 145"
+        stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M100 142.5L101.5 145.2L98.6 145.7"
+        stroke="#60A5FA" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M101 154C101 159 96.6 162.8 92 162.8C89 162.8 86.6 161.5 85 159.5"
+        stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M86 162L84.5 159.3L87.4 158.8"
+        stroke="#60A5FA" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <text x="118" y="148" class="mono" fill="#60A5FA"
+        font-size="7.8" font-weight="700" letter-spacing=".75">04 / ITERATE</text>
+
+      <text x="118" y="164" class="sans" fill="#E2E8F0"
+        font-size="11.5" font-weight="650">Continuous Improvement</text>
+
+      <text x="118" y="177" class="sans" fill="#64748B"
+        font-size="8.5">Learn · refine · improve the build</text>
+
+      <circle cx="249" cy="163" r="2.7" fill="#3B82F6"/>
+    </g>
+
+    <!-- Right bottom module: AI -->
+    <g class="focus-reveal-3">
+      <rect x="651" y="128" width="182" height="59" rx="13"
+        fill="#0D1728" stroke="#334155" stroke-opacity="0.72"/>
+
+      <rect x="660" y="137" width="31" height="31" rx="8"
+        fill="#0B1627" stroke="#38BDF8" stroke-opacity="0.22"/>
+
+      <!-- AI workflow glyph -->
+      <circle cx="670" cy="153" r="2.6" fill="#38BDF8"/>
+      <circle cx="681" cy="145" r="2.6" fill="#22D3EE"/>
+      <circle cx="681" cy="160" r="2.6" fill="#38BDF8"/>
+      <path d="M672.5 151.5L678.5 146.7M672.5 154.4L678.5 158.7"
+        stroke="#7DD3FC" stroke-opacity="0.7" stroke-width="1.1"/>
+
+      <text x="702" y="148" class="mono" fill="#38BDF8"
+        font-size="7.8" font-weight="700" letter-spacing=".75">03 / AI-ASSISTED</text>
+
+      <text x="702" y="164" class="sans" fill="#E2E8F0"
+        font-size="11.5" font-weight="650">AI-assisted Development</text>
+
+      <text x="702" y="177" class="sans" fill="#64748B"
+        font-size="8.5">Faster exploration · smarter workflows</text>
+
+      <circle cx="651" cy="163" r="2.7" fill="#38BDF8"/>
+    </g>
+
+    <!-- Central Metric core -->
+    <g class="focus-reveal-3">
+      <rect x="374" y="66" width="152" height="108" rx="21"
+        fill="#091422" stroke="#38BDF8" stroke-opacity="0.16"/>
+
+      <rect x="381" y="73" width="138" height="94" rx="16"
+        fill="#0D1829" stroke="#334155" stroke-opacity="0.7"/>
+
+      <rect x="390" y="82" width="120" height="76" rx="12"
+        fill="url(#focus-micro-grid)"/>
+
+      <!-- Core pulse halo -->
+      <rect x="390" y="82" width="120" height="76" rx="12"
+        fill="#22D3EE" fill-opacity="0.06"
+        class="focus-core-pulse"/>
+
+      <!-- Core label -->
+      <text x="450" y="103" class="mono" text-anchor="middle"
+        fill="#64748B" font-size="7.8" font-weight="700" letter-spacing="1.25">CURRENT PRODUCT</text>
+
+      <text x="450" y="126" class="sans" text-anchor="middle"
+        fill="#F8FAFC" font-size="19" font-weight="750" letter-spacing="-.3">Metric</text>
+
+      <text x="450" y="143" class="sans" text-anchor="middle"
+        fill="#94A3B8" font-size="9.5" font-weight="500">idea → implementation → learning</text>
+
+      <!-- Core live line -->
+      <path d="M410 151H434L440 147L447 154L456 145L463 151H490"
+        stroke="#38BDF8"
+        stroke-opacity="0.55"
+        stroke-width="1.1"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+      <circle cx="490" cy="151" r="2.2" fill="#22D3EE"/>
+    </g>
+
+    <!-- Central scan -->
+    <g clip-path="url(#focus-core-clip)" class="motion-only">
+      <rect x="373" y="72" width="56" height="98"
+        fill="url(#focus-scan)"
+        class="focus-scan"/>
+    </g>
+
+    <!-- Loop directional markers -->
+    <g class="focus-reveal-3">
+      <path d="M327 72L333 77L327 82"
+        stroke="#38BDF8" stroke-opacity="0.55"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <path d="M665 112L670 118L665 124"
+        stroke="#22D3EE" stroke-opacity="0.55"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <path d="M573 158L567 163L573 168"
+        stroke="#38BDF8" stroke-opacity="0.55"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <path d="M235 128L230 122L235 116"
+        stroke="#3B82F6" stroke-opacity="0.55"
+        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Travelling product-learning signal -->
+    <g class="focus-signal motion-only">
+      <circle r="3.1" fill="#E0F2FE">
+        <animateMotion
+          dur="8.8s"
+          begin="1.6s"
+          repeatCount="indefinite"
+          keyTimes="0;0.08;0.90;1"
+          keyPoints="0;0;1;1"
+          calcMode="linear"
+        >
+          <mpath href="#focus-loop-path"/>
+        </animateMotion>
+      </circle>
+
+      <circle r="8" fill="#22D3EE" fill-opacity="0.12" filter="url(#focus-glow)">
+        <animateMotion
+          dur="8.8s"
+          begin="1.6s"
+          repeatCount="indefinite"
+          keyTimes="0;0.08;0.90;1"
+          keyPoints="0;0;1;1"
+          calcMode="linear"
+        >
+          <mpath href="#focus-loop-path"/>
+        </animateMotion>
+      </circle>
+    </g>
+
+    <!-- Ambient telemetry -->
+    <g class="focus-ambient">
+      <circle cx="864" cy="95" r="1.5" fill="#38BDF8"/>
+      <circle cx="864" cy="105" r="1.5" fill="#334155"/>
+      <circle cx="864" cy="115" r="1.5" fill="#334155"/>
+      <circle cx="36" cy="126" r="1.5" fill="#334155"/>
+      <circle cx="36" cy="136" r="1.5" fill="#22D3EE"/>
+      <circle cx="36" cy="146" r="1.5" fill="#334155"/>
+    </g>
+
+    <!-- Bottom microcopy -->
+    <g class="focus-reveal-3">
+      <text x="450" y="220" class="mono" text-anchor="middle"
+        fill="#475569" font-size="8" letter-spacing=".85">
+        PRACTICAL MOBILE PRODUCTS · PRODUCT THINKING · AI-ASSISTED WORKFLOWS
+      </text>
+    </g>
+
+    <!-- Outer border -->
+    <path
+      d="M22 1H878C889.6 1 899 10.4 899 22V218C899 229.6 889.6 239 878 239H22C10.4 239 1 229.6 1 218V22C1 10.4 10.4 1 22 1Z"
+      stroke="#64748B"
+      stroke-opacity="0.2"
+    />
+  </g>
+</svg>
