@@ -1,79 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img">
-<title>Project Select Mission Screen</title>
-<desc>Arcade mission selection interface for featured GitHub repositories.</desc>
+<svg role="img" aria-labelledby="title desc" width="1000" height="400" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+<title id="title">NEXUS Engineering Mission Terminal</title>
+<desc id="desc">A futuristic repository mission selector showing four engineering projects.</desc>
 
+<defs>
+<linearGradient id="bg" x2="1" y2="1">
+<stop stop-color="#050816"/><stop offset="1" stop-color="#101A35"/>
+</linearGradient>
+<pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+<path d="M30 0H0V30" stroke="#00E5FF" stroke-opacity=".07"/>
+</pattern>
 <style>
-*{font-family:monospace}
-.bg{fill:#060914}
-.card{fill:#10162d;stroke:#ff4fd8;stroke-width:3}
-.title{fill:#ffe66d}
-.text{fill:#fff}
-.small{fill:#9ba8c7}
-.active{animation:pulse 2s infinite}
-@keyframes pulse{50%{stroke:#22e6ff}}
-@media(prefers-reduced-motion:reduce){.active{animation:none}}
+text{font-family:'Orbitron','Rajdhani','Space Mono',monospace;fill:#dffaff}
+.flow{animation:f 4s linear infinite}
+.flash{animation:f2 2s infinite}
+@keyframes f{from{transform:translateX(-900px)}to{transform:translateX(900px)}}
+@keyframes f2{50%{opacity:.4}}
+@media(prefers-reduced-motion:reduce){.flow,.flash{animation:none}}
 </style>
+</defs>
 
-<rect width="1000" height="620" class="bg"/>
+<rect width="1000" height="400" fill="url(#bg)"/>
+<rect width="1000" height="400" fill="url(#grid)"/>
 
-<text x="70" y="80" class="title" font-size="34">
-MISSION SELECT
-</text>
+<rect x="25" y="20" width="950" height="360" rx="14" fill="none" stroke="#00E5FF" stroke-opacity=".35"/>
+<text x="55" y="60" font-size="15" fill="#00E5FF">MISSION TERMINAL // REPOSITORY SELECT</text>
+<text x="55" y="82" font-size="10">CURRENT_MODULE: GitHub Activity</text>
 
-<g transform="translate(70 130)">
-<rect width="400" height="150" class="card active"/>
-<text x="25" y="45" class="text" font-size="22">
-raccoon-login-experience
-</text>
-<text x="25" y="80" class="small">
-No project
-</text>
-<text x="25" y="115" class="title">
-LOCKED
-</text>
+<g transform="translate(0 100)">
+<!-- slot 1 -->
+<g>
+<rect x="45" y="0" width="430" height="115" rx="12" fill="#081226" stroke="#00E5FF"/>
+<text x="70" y="30" font-size="13" fill="#FFE66D">MISSION 01</text>
+<text x="70" y="55" font-size="16">raccoon-login-experience</text>
+<text x="70" y="78" font-size="10">A playful cross-platform login experience with a reactive raccoon masc</text>
+<text x="70" y="100" font-size="11" fill="#7CFF8A">Dart // ACTIVE</text>
 </g>
 
-<g transform="translate(530 130)">
-<rect width="400" height="150" class="card"/>
-<text x="25" y="45" class="text" font-size="22">
-persian-auto-gallery-frontend
-</text>
-<text x="25" y="80" class="small">
-No project
-</text>
-<text x="25" y="115" class="title">
-LOCKED
-</text>
+<!-- slot 2 -->
+<g>
+<rect x="525" y="0" width="430" height="115" rx="12" fill="#081226" stroke="#A855F7"/>
+<text x="550" y="30" font-size="13" fill="#FFE66D">MISSION 02</text>
+<text x="550" y="55" font-size="16">Gorba</text>
+<text x="550" y="78" font-size="10">Engineering module</text>
+<text x="550" y="100" font-size="11" fill="#7CFF8A">TypeScript // ACTIVE</text>
 </g>
 
-<g transform="translate(70 330)">
-<rect width="400" height="150" class="card"/>
-<text x="25" y="45" class="text" font-size="22">
-hardware-reserve
-</text>
-<text x="25" y="80" class="small">
-No project
-</text>
-<text x="25" y="115" class="title">
-LOCKED
-</text>
+<!-- slot 3 -->
+<g>
+<rect x="45" y="140" width="430" height="115" rx="12" fill="#081226" stroke="#FF4FD8"/>
+<text x="70" y="170" font-size="13" fill="#FFE66D">MISSION 03</text>
+<text x="70" y="195" font-size="16">GitHub-Portfolio</text>
+<text x="70" y="218" font-size="10">Engineering module</text>
+<text x="70" y="240" font-size="11" fill="#7CFF8A">Python // ACTIVE</text>
 </g>
 
-<g transform="translate(530 330)">
-<rect width="400" height="150" class="card"/>
-<text x="25" y="45" class="text" font-size="22">
-EMPTY SLOT
-</text>
-<text x="25" y="80" class="small">
-No project
-</text>
-<text x="25" y="115" class="title">
-LOCKED
-</text>
+<!-- slot 4 -->
+<g>
+<rect x="525" y="140" width="430" height="115" rx="12" fill="#081226" stroke="#FFE66D"/>
+<text x="550" y="170" font-size="13" fill="#FFE66D">MISSION 04</text>
+<text x="550" y="195" font-size="16">OTP-Verification-micro-experience</text>
+<text x="550" y="218" font-size="10">Engineering module</text>
+<text x="550" y="240" font-size="11" fill="#7CFF8A">Dart // ACTIVE</text>
+</g>
 </g>
 
-<text x="70" y="570" class="small">
-AUTO GENERATED FROM GITHUB PROFILE DATA
-</text>
-
+<rect x="40" y="95" width="920" height="2" fill="#00E5FF" opacity=".2" class="flow"/>
+<circle cx="930" cy="55" r="5" fill="#7CFF8A" class="flash"/>
 </svg>

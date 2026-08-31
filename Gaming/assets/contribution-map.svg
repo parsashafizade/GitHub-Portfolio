@@ -1,153 +1,3435 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img">
-<title>Parsa Shafizade Contribution Map</title>
-<desc>
-Retro arcade styled GitHub contribution calendar showing activity intensity.
-</desc>
+<svg role="img" aria-labelledby="title desc" width="1000" height="400" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+<title id="title">NEXUS Engineering Contribution Battlefield</title>
+<desc id="desc">A futuristic tactical visualization of GitHub engineering activity.</desc>
 
-<style>
-*{
-font-family:monospace
-}
+<defs>
+  <linearGradient id="bg" x2="1" y2="1">
+    <stop stop-color="#050816"/>
+    <stop offset="0.5" stop-color="#081226"/>
+    <stop offset="1" stop-color="#101A35"/>
+  </linearGradient>
 
-.bg{
-fill:#060914
-}
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#00E5FF" stroke-opacity=".07"/>
+  </pattern>
 
-.panel{
-fill:#0d1429;
-stroke:#22e6ff;
-stroke-width:3
-}
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
 
-.grid{
-fill:#151d35;
-stroke:#202b4b;
-stroke-width:1
-}
+  <style>
+    text{
+      font-family:'Orbitron','Rajdhani','Space Mono','Inter',monospace;
+      fill:#dffaff;
+      letter-spacing:2px;
+    }
 
-.low{
-fill:#174b55
-}
+    .scan{
+      animation:scan 5s linear infinite;
+    }
 
-.mid{
-fill:#13a7b8
-}
+    .pulse{
+      animation:pulse 3s infinite;
+    }
 
-.high{
-fill:#ffe66d
-}
+    .blink{
+      animation:blink 2s infinite;
+    }
 
-.text{
-fill:#f7f7ff
-}
+    @keyframes scan{
+      from{transform:translateY(-200px)}
+      to{transform:translateY(420px)}
+    }
 
-.sub{
-fill:#9da8c8
-}
+    @keyframes pulse{
+      50%{opacity:.35}
+    }
 
-.cursor{
-animation:blink 1.4s infinite
-}
+    @keyframes blink{
+      50%{opacity:.3}
+    }
 
-@keyframes blink{
-50%{opacity:.25}
-}
+    @media(prefers-reduced-motion:reduce){
+      .scan,.pulse,.blink{
+        animation:none;
+      }
+    }
+  </style>
+</defs>
 
-@media(prefers-reduced-motion:reduce){
-.cursor{
-animation:none
-}
-}
+<rect width="1000" height="400" fill="url(#bg)"/>
+<rect width="1000" height="400" fill="url(#grid)"/>
 
-</style>
+<rect x="25" y="20" width="950" height="360" rx="14" fill="none" stroke="#00E5FF" stroke-opacity=".35"/>
+<rect x="35" y="30" width="930" height="340" rx="10" fill="none" stroke="#A855F7" stroke-opacity=".25"/>
 
+<path d="M25 92H975M25 320H975" stroke="#A855F7" stroke-opacity=".25"/>
 
-<rect width="1000" height="430" class="bg"/>
-
-
-<rect x="35" y="35" width="930" height="360" rx="16" class="panel"/>
-
-
-<text x="70" y="85" class="text" font-size="24">
-ACTIVITY MAP
+<text x="55" y="62" font-size="15" fill="#00E5FF">
+NEXUS ENGINEERING COMMAND OS // ACTIVITY BATTLEFIELD
 </text>
 
-<circle cx="255" cy="76" r="7" fill="#7cff8a" class="cursor"/>
-
-
-<text x="70" y="120" class="sub" font-size="16">
-160 CONTRIBUTIONS  •  dynamic ACTIVE DAYS
+<text x="55" y="86" font-size="11">
+CURRENT_YEAR: 2026 // MODULE: CONTRIBUTION_MAP
 </text>
-
-
-<!-- Month labels -->
-<text x="210" y="165" class="sub" font-size="14">
-JAN
-</text>
-
-<text x="410" y="165" class="sub" font-size="14">
-APR
-</text>
-
-<text x="610" y="165" class="sub" font-size="14">
-JUL
-</text>
-
-<text x="810" y="165" class="sub" font-size="14">
-OCT
-</text>
-
-
-<!-- Contribution grid -->
-<g id="CONTRIBUTION_GRID" transform="translate(110 190)">
 
 <g>
-<rect x="0" y="0" width="18" height="18" class="grid"/>
-<rect x="24" y="0" width="18" height="18" class="low"/>
-<rect x="48" y="0" width="18" height="18" class="mid"/>
-<rect x="72" y="0" width="18" height="18" class="high"/>
+<rect x="55" y="120" width="220" height="155" rx="12" fill="#081226" stroke="#00E5FF" stroke-opacity=".45"/>
 
-<rect x="0" y="24" width="18" height="18" class="mid"/>
-<rect x="24" y="24" width="18" height="18" class="high"/>
-<rect x="48" y="24" width="18" height="18" class="low"/>
-<rect x="72" y="24" width="18" height="18" class="mid"/>
-
-<rect x="0" y="48" width="18" height="18" class="high"/>
-<rect x="24" y="48" width="18" height="18" class="mid"/>
-<rect x="48" y="48" width="18" height="18" class="high"/>
-<rect x="72" y="48" width="18" height="18" class="low"/>
-</g>
-
-
-<!-- repeated map area -->
-<g transform="translate(110 0)">
-<rect width="400" height="90"
-fill="#10182e"
-stroke="#202b4b"/>
-</g>
-
-<g transform="translate(530 0)">
-<rect width="220" height="90"
-fill="#10182e"
-stroke="#202b4b"/>
-</g>
-
-
-</g>
-
-
-<text x="120" y="340" class="sub" font-size="14">
-LESS
+<text x="80" y="150" font-size="11" fill="#00E5FF">
+ENGINE METRICS
 </text>
 
-<rect x="170" y="325" width="16" height="16" class="grid"/>
-<rect x="195" y="325" width="16" height="16" class="low"/>
-<rect x="220" y="325" width="16" height="16" class="mid"/>
-<rect x="245" y="325" width="16" height="16" class="high"/>
-
-<text x="280" y="340" class="sub" font-size="14">
-MORE
+<text x="80" y="185" font-size="14">
+CONTRIBUTIONS
 </text>
 
+<text x="80" y="215" font-size="22" fill="#FFE66D">
+161
+</text>
+
+<text x="80" y="245" font-size="12">
+ACTIVE DAYS: 28
+</text>
+
+<text x="80" y="265" font-size="12">
+REPOS: 13
+</text>
+</g>
+
+
+<g>
+<rect x="315" y="120" width="610" height="155" rx="12" fill="#081226" stroke="#A855F7"/>
+
+<text x="340" y="150" font-size="11" fill="#A855F7">
+ENGINEERING ACTIVITY GRID
+</text>
+
+<!-- Dynamic contribution injection area -->
+<g id="contribution-grid">
+
+                <rect
+                x="340"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="340"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="340"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="340"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="340"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="340"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="340"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="352"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="352"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="352"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="352"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="352"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="352"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="352"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="364"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="364"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="364"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="364"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="364"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="364"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="364"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="376"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="376"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="376"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="376"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="376"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="376"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="376"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="388"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="388"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="388"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="388"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="388"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="388"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="388"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="400"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="400"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="400"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="400"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="400"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="400"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="400"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="412"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="412"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="412"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="412"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="412"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="412"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="412"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="424"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="424"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="424"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="424"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="424"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="424"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="424"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="436"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="436"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="436"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="436"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="436"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="436"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="436"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="448"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="448"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="448"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="448"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="448"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="448"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="448"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="460"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="460"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="460"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="460"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="460"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="460"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="460"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="472"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="472"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="472"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="472"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="472"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="472"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="472"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="484"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="484"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="484"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="484"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="484"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="484"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="484"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="496"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="496"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="496"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="496"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="496"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="496"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="496"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="508"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="508"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="508"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="508"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="508"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="508"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="508"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="520"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="520"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="520"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="520"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="520"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="520"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="520"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="532"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="532"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="532"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="532"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="532"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="532"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="532"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="544"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="544"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="544"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="544"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="544"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="544"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="544"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="556"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="556"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="556"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="556"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="556"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="556"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="556"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="568"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="568"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="568"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="568"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="568"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="568"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="568"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="580"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="580"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="580"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="580"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="580"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="580"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="580"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="592"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="592"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="592"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="592"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="592"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="592"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="592"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="604"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="604"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="604"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="604"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="604"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="604"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="604"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="616"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="616"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="616"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="616"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="616"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="616"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="616"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="628"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="628"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="628"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="628"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="628"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="628"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="628"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="640"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="640"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="640"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="640"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="640"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="640"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="640"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="652"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="652"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="652"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="652"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="652"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="652"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="652"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="664"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="664"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="664"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="664"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="664"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="664"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="664"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="676"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="676"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="676"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="676"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="676"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="676"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="676"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="688"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="688"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="688"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="688"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="688"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="688"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="688"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="700"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="700"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="700"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="700"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="700"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="700"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="700"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="712"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="712"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="712"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="712"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="712"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="712"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="712"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="724"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="724"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="724"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="724"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="724"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="724"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="724"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="736"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="736"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="736"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="736"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="736"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="736"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="736"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="748"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="748"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="748"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="748"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="748"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="748"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="748"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="760"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="760"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="760"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="760"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="760"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="760"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="760"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="772"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="772"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="772"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="772"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="772"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="772"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="772"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="784"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="784"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="784"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="784"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="784"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="784"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="784"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="796"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="796"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="796"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="796"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="796"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="796"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="796"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="808"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="808"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="808"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="808"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="808"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="808"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="808"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="820"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="820"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="820"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="820"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="820"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="820"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="820"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="832"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="832"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="832"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="832"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="832"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="832"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="832"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="844"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="844"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="844"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="844"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="844"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="844"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="844"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="856"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="856"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="856"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="856"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="856"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="856"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="856"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="868"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="868"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="868"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="868"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="868"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="868"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="868"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="880"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="880"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="880"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="880"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="880"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="880"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="880"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="892"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="892"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="892"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="892"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="892"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="892"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="892"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="904"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="904"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="904"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="904"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="904"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="904"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="904"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="916"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="916"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="916"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="916"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="916"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="916"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="916"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="928"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="928"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="928"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="928"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="928"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="928"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="928"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="940"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="940"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="940"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="940"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#FFE66D"
+                />
+                
+                <rect
+                x="940"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#FFE66D"
+                />
+                
+                <rect
+                x="940"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#FFE66D"
+                />
+                
+                <rect
+                x="940"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="952"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="952"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="952"
+                y="194"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#FFE66D"
+                />
+                
+                <rect
+                x="952"
+                y="206"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="952"
+                y="218"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#A855F7"
+                />
+                
+                <rect
+                x="952"
+                y="230"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#00E5FF"
+                />
+                
+                <rect
+                x="952"
+                y="242"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#101A35"
+                />
+                
+                <rect
+                x="964"
+                y="170"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#FFE66D"
+                />
+                
+                <rect
+                x="964"
+                y="182"
+                width="8"
+                height="8"
+                rx="2"
+                fill="#FFE66D"
+                />
+                
+</g>
+
+</g>
+
+
+<g>
+<rect x="55" y="300" width="870" height="40" rx="8" fill="#081226" stroke="#00E5FF" stroke-opacity=".25"/>
+
+<text x="80" y="325" font-size="11">
+ACTIVITY LEVEL
+</text>
+
+<rect x="250" y="312" width="18" height="12" fill="#101A35"/>
+<text x="278" y="324" font-size="10">LOW</text>
+
+<rect x="350" y="312" width="18" height="12" fill="#00E5FF"/>
+<text x="378" y="324" font-size="10">ACTIVE</text>
+
+<rect x="470" y="312" width="18" height="12" fill="#A855F7"/>
+<text x="498" y="324" font-size="10">HIGH</text>
+
+<rect x="600" y="312" width="18" height="12" fill="#FFE66D"/>
+<text x="628" y="324" font-size="10">ELITE</text>
+
+<circle cx="900" cy="320" r="5" fill="#7CFF8A" class="blink"/>
+</g>
+
+
+<rect x="40" y="100" width="920" height="2" fill="#00E5FF" opacity=".2" class="scan"/>
 
 </svg>

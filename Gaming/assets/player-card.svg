@@ -1,60 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img">
-<title>Parsa Shafizade Player Card</title>
-<desc>Game character status panel representing a software developer profile.</desc>
+<svg role="img" aria-labelledby="title desc" width="1000" height="400" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+<title id="title">NEXUS Engineering Character Profile</title>
+<desc id="desc">A futuristic engineer character management screen.</desc>
 
+<defs>
+<linearGradient id="bg" x2="1" y2="1">
+<stop stop-color="#050816"/><stop offset="1" stop-color="#101A35"/>
+</linearGradient>
+<pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+<path d="M28 0H0V28" stroke="#00E5FF" stroke-opacity=".08"/>
+</pattern>
 <style>
-*{font-family:monospace}
-.bg{fill:#080b19}
-.panel{fill:#10162c;stroke:#ffe66d;stroke-width:3}
-.t{fill:#fff}
-.y{fill:#ffe66d}
-.c{fill:#22e6ff}
-.p{fill:#ff4fd8}
-.glow{animation:pulse 2s infinite}
-@keyframes pulse{50%{opacity:.4}}
-@media(prefers-reduced-motion:reduce){.glow{animation:none}}
+text{font-family:'Orbitron','Rajdhani','Space Mono',monospace;fill:#dffaff}
+.blink{animation:b 2s infinite}
+.rotate{animation:r 20s linear infinite}
+@keyframes b{50%{opacity:.3}}
+@keyframes r{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.blink,.rotate{animation:none}}
 </style>
+</defs>
 
-<rect width="700" height="500" class="bg"/>
+<rect width="1000" height="400" fill="url(#bg)"/>
+<rect width="1000" height="400" fill="url(#grid)"/>
 
-<rect x="35" y="35" width="630" height="430" rx="16" class="panel"/>
+<rect x="25" y="20" width="950" height="360" rx="14" fill="none" stroke="#00E5FF" stroke-opacity=".35"/>
+<path d="M25 90H975M25 315H975" stroke="#A855F7" stroke-opacity=".25"/>
 
-<text x="70" y="90" class="y" font-size="24">
-CHARACTER STATUS
-</text>
+<text x="55" y="62" font-size="15" fill="#00E5FF">CHARACTER MANAGEMENT // ENGINEER LOADOUT</text>
 
-<text x="70" y="145" class="t" font-size="38">
-PARSA
-</text>
-
-<text x="70" y="180" class="c" font-size="18">
-CLASS: MOBILE APPLICATION DEVELOPER
-</text>
-
-<line x1="70" y1="210" x2="620" y2="210" stroke="#ff4fd8"/>
-
-<text x="70" y="255" class="t" font-size="18">
-ROLE MODULE
-</text>
-
-<text x="70" y="285" class="c" font-size="16">
-PRODUCT-MINDED BUILDER
-</text>
-
-<text x="70" y="315" class="p" font-size="16">
-AI-ASSISTED DEVELOPMENT
-</text>
-
-<g transform="translate(70 355)">
-<rect width="540" height="70" fill="#0b1022" stroke="#22e6ff"/>
-<text x="20" y="28" class="t" font-size="15">
-ACTIVE DAYS     ████████
-</text>
-<text x="20" y="52" class="t" font-size="15">
-REPOS           ██████
-</text>
+<g transform="translate(170 205)">
+<polygon points="0,-95 82,-48 82,48 0,95 -82,48 -82,-48" fill="#081226" stroke="#00E5FF"/>
+<circle r="58" fill="none" stroke="#A855F7" stroke-dasharray="8 14" class="rotate"/>
+<circle r="38" fill="#050816" stroke="#FFE66D"/>
+<text x="-42" y="6" font-size="13">CORE</text>
 </g>
 
-<circle cx="600" cy="90" r="10" fill="#7cff8a" class="glow"/>
+<g>
+<rect x="300" y="105" width="300" height="200" rx="12" fill="#081226" stroke="#00E5FF" stroke-opacity=".45"/>
+<text x="325" y="140" font-size="12" fill="#00E5FF">IDENTITY</text>
+<text x="325" y="170" font-size="20">parsashafizade</text>
+<text x="325" y="200" font-size="12">Mobile Application Developer</text>
+<text x="325" y="225" font-size="12">CLASS: Software Engineer</text>
+<text x="325" y="250" font-size="12">RANK: PRODUCT BUILDER</text>
+<text x="325" y="275" font-size="12" fill="#7CFF8A">STATUS: ONLINE</text>
+</g>
 
+<g>
+<rect x="640" y="90" width="280" height="220" rx="12" fill="#081226" stroke="#A855F7"/>
+<text x="665" y="125" font-size="12" fill="#A855F7">ATTRIBUTES</text>
+
+<text x="665" y="160" font-size="11">FLUTTER SYSTEMS</text>
+<rect x="665" y="170" width="180" height="6" fill="#101A35"/>
+<rect x="665" y="170" width="150" height="6" fill="#00E5FF"/>
+
+<text x="665" y="205" font-size="11">PRODUCT BUILDING</text>
+<rect x="665" y="215" width="180" height="6" fill="#101A35"/>
+<rect x="665" y="215" width="165" height="6" fill="#A855F7"/>
+
+<text x="665" y="250" font-size="11">AI WORKFLOW</text>
+<rect x="665" y="260" width="180" height="6" fill="#101A35"/>
+<rect x="665" y="260" width="140" height="6" fill="#FFE66D"/>
+</g>
+
+<g>
+<text x="70" y="350" font-size="11">SPECIALIZATION: Flutter / AI Assisted Development</text>
+<text x="560" y="350" font-size="11">XP: 161</text>
+</g>
+
+<circle cx="945" cy="45" r="5" fill="#7CFF8A" class="blink"/>
 </svg>
