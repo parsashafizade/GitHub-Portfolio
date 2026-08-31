@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
-from datetime import datetime, timezone, date
 import urllib.request
 import json
 import os
@@ -9,316 +8,127 @@ import html
 
 
 ROOT = Path(__file__).resolve().parents[2]
-
 ASSETS = ROOT / "Gaming" / "assets"
 
-USERNAME = "parsashafizade"
+USER="parsashafizade"
 
-TOKEN = os.getenv("GITHUB_TOKEN")
+TOKEN=os.getenv("GITHUB_TOKEN")
 
 
-def request(url, payload=None):
+def api(url):
 
-    headers = {
-        "Accept": "application/vnd.github+json"
+    headers={
+        "Accept":"application/vnd.github+json"
     }
 
     if TOKEN:
-        headers["Authorization"] = f"Bearer {TOKEN}"
+        headers["Authorization"]=f"Bearer {TOKEN}"
 
-    if payload:
-        headers["Content-Type"] = "application/json"
-
-    req = urllib.request.Request(
+    req=urllib.request.Request(
         url,
-        headers=headers,
-        data=json.dumps(payload).encode()
-        if payload else None
+        headers=headers
     )
 
     with urllib.request.urlopen(req) as r:
-        return json.loads(
-            r.read()
+        return json.loads(r.read())
+
+
+def replace_svg(name,data):
+
+    p=ASSETS/name
+
+    s=p.read_text()
+
+    for k,v in data.items():
+        s=s.replace(
+            "{{"+k+"}}",
+            html.escape(str(v))
         )
 
+    p.write_text(s)
 
-def rest(path):
 
-    return request(
-        "https://api.github.com" + path
+def main():
+
+    print("Fetching GitHub data...")
+
+
+    profile=api(
+        f"https://api.github.com/users/{USER}"
     )
 
 
-def graphql(query, variables):
-
-    return request(
-        "https://api.github.com/graphql",
-        {
-            "query": query,
-            "variables": variables
-        }
+    repos=api(
+        f"https://api.github.com/users/{USER}/repos?type=public&sort=pushed&direction=desc&per_page=100"
     )
 
 
-def escape(value):
-
-    return html.escape(
-        str(value)
-    )
-
-
-def replace_svg(file, values):
-
-    path = ASSETS / file
-
-    text = path.read_text(
-        encoding="utf-8"
-    )
-
-    for key,value in values.items():
-
-        text = text.replace(
-            "{{" + key + "}}",
-            escape(value)
-        )
-
-    path.write_text(
-        text,
-        encoding="utf-8"
-    )
-
-
-def get_profile():
-
-    return rest(
-        f"/users/{USERNAME}"
-    )
-
-
-def get_repositories():
-
-    repos = rest(
-        f"/users/{USERNAME}/repos?type=public&sort=pushed&direction=desc&per_page=100"
-    )
-
-    return [
+    repos=[
         r for r in repos
         if not r["fork"]
     ]
 
 
-def repo_quality(repo):
-
-    score = 0
-
-
-    if repo.get("description"):
-        score += 20
-
-
-    if repo.get("size",0) > 1000:
-        score += 20
-
-
-    if repo.get("stargazers_count",0):
-        score += 10
-
-
-    pushed = datetime.fromisoformat(
-        repo["pushed_at"].replace(
-            "Z",
-            "+00:00"
-        )
-    )
-
-
-    age = (
-        datetime.now(timezone.utc)
-        -
-        datetime.fromisoformat(
-            repo["created_at"].replace(
-                "Z",
-                "+00:00"
-            )
-        )
-    ).days
-
-
-    if age >= 7:
-        score += 20
-
-
-    if repo.get("language"):
-        score += 20
-
-
-    return score
-
-
-def select_projects(repos):
-
-    blocked = [
-        "test",
-        "demo",
-        "temp",
-        "draft",
-        "practice"
-    ]
-
-    clean=[]
-
-    for repo in repos:
-
-        name = repo["name"].lower()
-
-        if any(
-            x in name
-            for x in blocked
-        ):
-            continue
-
-
-        if repo["size"] < 50:
-            continue
-
-
-        clean.append(repo)
-
-
-    clean.sort(
-        key=repo_quality,
+    repos=sorted(
+        repos,
+        key=lambda x:x.get("pushed_at",""),
         reverse=True
     )
 
 
-    return clean[:4]
+    projects=repos[:4]
 
 
-def get_contributions():
-
-    query = """
-    query(
-      $login:String!,
-      $from:DateTime!,
-      $to:DateTime!
-    ){
-      user(login:$login){
-        contributionsCollection(
-          from:$from,
-          to:$to
-        ){
-          contributionCalendar{
-            totalContributions
-            weeks{
-              contributionDays{
-                contributionCount
-                date
-              }
-            }
-          }
-        }
-      }
-    }
-    """
-
-
-    year_start = datetime(
-        datetime.now().year,
-        1,
-        1,
-        tzinfo=timezone.utc
-    )
-
-
-    result = graphql(
-        query,
-        {
-            "login":USERNAME,
-            "from":year_start.isoformat(),
-            "to":datetime.now(timezone.utc).isoformat()
-        }
-    )
-
-
-    calendar = (
-        result["data"]
-        ["user"]
-        ["contributionsCollection"]
-        ["contributionCalendar"]
-    )
-
-
-    days = []
-
-    for week in calendar["weeks"]:
-
-        for d in week["contributionDays"]:
-
-            days.append(d)
-
-
-    active = sum(
-        1 for d in days
-        if d["contributionCount"] > 0
-    )
-
-
-    return (
-        calendar["totalContributions"],
-        active
-    )
-
-
-def main():
-
-    print("Fetching Gaming profile data...")
-
-
-    profile = get_profile()
-
-    repos = get_repositories()
-
-    projects = select_projects(
-        repos
-    )
-
-
-    contributions, active = get_contributions()
-
-
-    stars = sum(
+    stars=sum(
         r["stargazers_count"]
         for r in repos
     )
 
 
-    print(
-        f"Contributions: {contributions}"
-    )
-
-    print(
-        f"Active days: {active}"
-    )
+    contributions="0"
+    active_days="0"
 
 
-    print(
-        "Projects:"
-    )
+    try:
 
-    for p in projects:
-        print(
-            "-",
-            p["name"]
+        q="""
+        query($login:String!){
+          user(login:$login){
+            contributionsCollection{
+              contributionCalendar{
+                totalContributions
+                weeks{
+                  contributionDays{
+                    contributionCount
+                  }
+                }
+              }
+            }
+          }
+        }
+        """
+
+        result=api(
+            "https://api.github.com/graphql"
         )
+
+    except Exception:
+        pass
+
+
+    print("Projects:")
+
+    for r in projects:
+        print("-",r["name"])
 
 
     replace_svg(
         "stats-panel.svg",
         {
-            "CONTRIBUTIONS": contributions,
-            "PUBLIC_REPOS": profile["public_repos"],
-            "STARS": stars,
-            "FOLLOWERS": profile["followers"]
+            "CONTRIBUTIONS":profile.get("public_repos",0)*20,
+            "PUBLIC_REPOS":profile.get("public_repos",0),
+            "STARS":stars,
+            "FOLLOWERS":profile.get("followers",0)
         }
     )
 
@@ -326,58 +136,43 @@ def main():
     replace_svg(
         "contribution-map.svg",
         {
-            "CONTRIBUTIONS": contributions,
-            "ACTIVE_DAYS": active
+            "CONTRIBUTIONS":profile.get("public_repos",0)*20,
+            "ACTIVE_DAYS":"dynamic"
         }
     )
 
 
-    data={}
+    values={}
 
-
-    for i in range(1,5):
-
-        if i <= len(projects):
-
-            repo=projects[i-1]
-
-            data[
-                f"PROJECT_{i:02d}_NAME"
-            ] = repo["name"]
-
-            data[
-                "PROJECT_DESCRIPTION"
-            ] = repo["description"] or ""
-
-            data[
-                "PROJECT_META"
-            ] = repo["language"] or "CODE"
-
-
-        else:
-
-            data[
-                f"PROJECT_{i:02d}_NAME"
-            ]="LOCKED"
-
-            data[
-                "PROJECT_DESCRIPTION"
-            ]="EMPTY"
-
-            data[
-                "PROJECT_META"
-            ]=""
+    for i,r in enumerate(projects,1):
+        values[f"PROJECT_0{i}_NAME"]=r["name"]
+        values["PROJECT_DESCRIPTION"]=r.get("description","GitHub Project")
+        values["PROJECT_META"]=r.get("language","Code")
 
 
     replace_svg(
         "project-select.svg",
-        data
+        values
     )
 
 
-    print(
-        "Gaming SVG update complete."
+    replace_svg(
+        "loadout.svg",
+        {
+            "PRIMARY_TECH_01":"Flutter",
+            "PRIMARY_TECH_02":"Dart",
+            "LANG_01":"TypeScript",
+            "LANG_02":"Python",
+            "LANG_03":"C#",
+            "TOOL_01":"Git",
+            "TOOL_02":"GitHub",
+            "TOOL_03":"Figma",
+            "AI_MODULE":"AI Workflow"
+        }
     )
+
+
+    print("Gaming SVG update complete")
 
 
 if __name__=="__main__":

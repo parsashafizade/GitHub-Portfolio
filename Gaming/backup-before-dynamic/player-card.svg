@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img">
+<title>Parsa Shafizade Player Card</title>
+<desc>Game character status panel representing a software developer profile.</desc>
+
+<style>
+*{font-family:monospace}
+.bg{fill:#080b19}
+.panel{fill:#10162c;stroke:#ffe66d;stroke-width:3}
+.t{fill:#fff}
+.y{fill:#ffe66d}
+.c{fill:#22e6ff}
+.p{fill:#ff4fd8}
+.glow{animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.4}}
+@media(prefers-reduced-motion:reduce){.glow{animation:none}}
+</style>
+
+<rect width="700" height="500" class="bg"/>
+
+<rect x="35" y="35" width="630" height="430" rx="16" class="panel"/>
+
+<text x="70" y="90" class="y" font-size="24">
+CHARACTER STATUS
+</text>
+
+<text x="70" y="145" class="t" font-size="38">
+PARSA
+</text>
+
+<text x="70" y="180" class="c" font-size="18">
+CLASS: MOBILE APPLICATION DEVELOPER
+</text>
+
+<line x1="70" y1="210" x2="620" y2="210" stroke="#ff4fd8"/>
+
+<text x="70" y="255" class="t" font-size="18">
+ROLE MODULE
+</text>
+
+<text x="70" y="285" class="c" font-size="16">
+PRODUCT-MINDED BUILDER
+</text>
+
+<text x="70" y="315" class="p" font-size="16">
+AI-ASSISTED DEVELOPMENT
+</text>
+
+<g transform="translate(70 355)">
+<rect width="540" height="70" fill="#0b1022" stroke="#22e6ff"/>
+<text x="20" y="28" class="t" font-size="15">
+ACTIVE DAYS     ████████
+</text>
+<text x="20" y="52" class="t" font-size="15">
+REPOS           ██████
+</text>
+</g>
+
+<circle cx="600" cy="90" r="10" fill="#7cff8a" class="glow"/>
+
+</svg>

@@ -29,9 +29,9 @@ LOADOUT // EQUIPMENT
 <g transform="translate(480 100)">
 <rect width="370" height="110" class="box"/>
 <text x="25" y="35" class="gold">LANGUAGE SLOT</text>
-<text x="25" y="70" class="txt">TypeScript</text>
-<text x="170" y="70" class="txt">Python</text>
-<text x="270" y="70" class="txt">C#</text>
+<text x="25" y="70" class="txt">Python</text>
+<text x="170" y="70" class="txt">C++</text>
+<text x="270" y="70" class="txt">Java</text>
 </g>
 
 <g transform="translate(50 250)">
