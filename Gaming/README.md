@@ -41,6 +41,14 @@
 <div align="center">
 
 <img src="./assets/contribution-map.svg" width="100%" alt="GitHub Contribution Map" />
+<br/>
+
+<div align="center">
+
+<img src="./assets/activity/github-snake.svg" width="100%" alt="GitHub contribution snake" />
+
+</div>
+
 
 </div>
 
