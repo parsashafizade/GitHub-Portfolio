@@ -1,0 +1,97 @@
+name: Update Premium GitHub Activity
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Daily, separated from the project-card workflow to reduce
+    # the chance of two generated-asset workflows pushing together.
+    - cron: "47 4 * * *"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "Premium/scripts/generate-github-activity.py"
+      - ".github/workflows/update-premium-github-activity.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: premium-github-activity
+  cancel-in-progress: true
+
+jobs:
+  update-activity:
+    name: Generate Premium GitHub activity assets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate local GitHub activity SVGs
+        env:
+          # Optional PAT / fine-grained token.
+          # The generator still intentionally queries public endpoints only,
+          # so private repositories/activity cannot leak into these SVGs.
+          PROFILE_REPOS_TOKEN: ${{ secrets.PROFILE_REPOS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python Premium/scripts/generate-github-activity.py
+
+      - name: Stage generated assets
+        shell: bash
+        run: |
+          git add Premium/assets/activity/stats.svg
+          git add Premium/assets/activity/languages.svg
+          git add Premium/assets/activity/contributions.svg
+
+      - name: Commit generated assets
+        id: commit
+        shell: bash
+        run: |
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "GitHub activity assets are already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "chore: update Premium GitHub activity"
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Rebase and push
+        if: steps.commit.outputs.changed == 'true'
+        shell: bash
+        run: |
+          branch="${GITHUB_REF_NAME:-main}"
+
+          # Another automation may have updated main after checkout.
+          # Rebase before pushing to avoid ordinary non-fast-forward failures.
+          for attempt in 1 2 3; do
+            echo "Push attempt ${attempt}/3"
+
+            git pull --rebase origin "$branch"
+
+            if git push origin "HEAD:$branch"; then
+              echo "Premium GitHub activity assets pushed successfully."
+              exit 0
+            fi
+
+            sleep $((attempt * 3))
+          done
+
+          echo "Failed to push after 3 attempts."
+          exit 1

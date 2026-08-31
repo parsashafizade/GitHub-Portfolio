@@ -1,0 +1,161 @@
+<svg width="430" height="180" viewBox="0 0 430 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">Parsa Shafizade GitHub Snapshot</title>
+<desc id="desc">Local public GitHub summary: 8 repositories, 5 stars, 1 forks, and 8 repositories pushed in the last 30 days.</desc>
+
+
+<defs>
+  <linearGradient id="stats-bg" x1="12" y1="8" x2="418" y2="174">
+    <stop stop-color="#0B1120"/>
+    <stop offset=".56" stop-color="#0D1627"/>
+    <stop offset="1" stop-color="#0F172A"/>
+  </linearGradient>
+
+  <linearGradient id="stats-edge" x1="0" y1="0" x2="430" y2="180">
+    <stop stop-color="#38BDF8" stop-opacity=".42"/>
+    <stop offset=".55" stop-color="#334155" stop-opacity=".58"/>
+    <stop offset="1" stop-color="#22D3EE" stop-opacity=".17"/>
+  </linearGradient>
+
+  <pattern id="stats-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0H0V22" stroke="#94A3B8" stroke-opacity=".043"/>
+    <circle cx="1" cy="1" r=".65" fill="#22D3EE" fill-opacity=".045"/>
+  </pattern>
+
+  <clipPath id="stats-clip">
+    <rect x=".5" y=".5" width="429" height="179" rx="18"/>
+  </clipPath>
+</defs>
+
+
+<style>
+  .sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: reveal .65s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+
+  .d2 { animation-delay: .09s; }
+  .d3 { animation-delay: .18s; }
+
+  .pulse {
+    animation: pulse 4.2s ease-in-out infinite 1.1s;
+  }
+
+  .scan {
+    animation: scan 7.4s ease-in-out infinite 1.3s;
+  }
+
+  .trace {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    animation: trace 1.2s cubic-bezier(.4,0,.2,1) .28s forwards;
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity: .38; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes scan {
+    0%,22% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+
+    34% { opacity: .72; }
+    72% { opacity: .24; }
+
+    82%,100% {
+      transform: translateX(52px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes trace {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .pulse,
+    .scan,
+    .trace {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+</style>
+
+
+<rect x=".5" y=".5" width="429" height="179" rx="18" fill="url(#stats-bg)"/>
+
+<g clip-path="url(#stats-clip)">
+  <rect width="430" height="180" fill="url(#stats-grid)"/>
+  <circle cx="360" cy="69" r="84" fill="#38BDF8" fill-opacity=".027"/>
+</g>
+
+<rect x=".5" y=".5" width="429" height="179" rx="18" stroke="url(#stats-edge)"/>
+
+<g class="sans reveal">
+  <circle cx="407" cy="23" r="3.2" fill="#22D3EE" class="pulse"/>
+  <text x="396" y="26.5" text-anchor="end" fill="#64748B" font-size="8.2" font-weight="700" letter-spacing="1.2">GITHUB SNAPSHOT · PUBLIC SIGNAL</text>
+  <text x="20" y="56" fill="#F8FAFC" font-size="17" font-weight="760">GitHub Signal</text>
+  <text x="20" y="74" fill="#94A3B8" font-size="9.5">Current public repository activity, generated locally.</text>
+</g>
+
+<g class="sans reveal d2">
+  <text x="20" y="111" fill="#F8FAFC" font-size="23" font-weight="800">8</text>
+  <text x="20" y="125" fill="#64748B" font-size="7.6" font-weight="700">PUBLIC REPOS</text>
+
+  <line x1="99" y1="94" x2="99" y2="130" stroke="#243247"/>
+
+  <text x="118" y="111" fill="#E2E8F0" font-size="17" font-weight="760">5</text>
+  <text x="118" y="125" fill="#64748B" font-size="7.4" font-weight="700">STARS</text>
+
+  <text x="180" y="111" fill="#E2E8F0" font-size="17" font-weight="760">1</text>
+  <text x="180" y="125" fill="#64748B" font-size="7.4" font-weight="700">FORKS</text>
+
+  <text x="242" y="111" fill="#E2E8F0" font-size="17" font-weight="760">8</text>
+  <text x="242" y="125" fill="#64748B" font-size="7.4" font-weight="700">PUSHED / 30D</text>
+</g>
+
+<g transform="translate(319 48)">
+  <g class="reveal d2">
+    <rect width="89" height="80" rx="12" fill="#0B1626" stroke="#334155"/>
+
+    <text class="mono" x="12" y="18" fill="#64748B" font-size="6.8">LAST PUSH</text>
+    <text class="mono" x="12" y="34" fill="#BAE6FD" font-size="10" font-weight="700">AUG 31</text>
+
+    <path class="trace" d="M12 57H29L37 48L48 61L60 52L77 52" stroke="#38BDF8" stroke-opacity=".68" stroke-width="1.2"/>
+
+    <circle cx="77" cy="52" r="2.7" fill="#22D3EE" class="pulse"/>
+
+    <rect x="12" y="69" width="62" height="4" rx="2" fill="#111C2D"/>
+    <rect class="scan" x="12" y="69" width="20" height="4" rx="2" fill="#22D3EE" fill-opacity=".30"/>
+  </g>
+</g>
+
+<line x1="20" y1="144" x2="410" y2="144" stroke="#1E293B"/>
+
+<g class="mono reveal d3">
+  <text x="20" y="163" fill="#475569" font-size="7.4">UPDATED AUG 31, 2026 · UTC</text>
+  <text x="320" y="163" fill="#7DD3FC" font-size="7.6" font-weight="700">LOCAL · AUTO-SYNCED</text>
+</g>
+</svg>
