@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img">
+
+<title>Gaming Profile Continue Screen</title>
+
+<desc>
+Arcade style final connection panel with profile links.
+</desc>
+
+
+<style>
+
+*{
+font-family:monospace
+}
+
+.bg{
+fill:#070a18
+}
+
+.panel{
+fill:#10162d;
+stroke:#22e6ff;
+stroke-width:3
+}
+
+.text{
+fill:#ffffff
+}
+
+.gold{
+fill:#ffe66d
+}
+
+.button{
+animation:blink 1.5s infinite
+}
+
+@keyframes blink{
+50%{
+opacity:.35
+}
+}
+
+@media(prefers-reduced-motion:reduce){
+.button{
+animation:none
+}
+}
+
+</style>
+
+
+<rect width="1000" height="300" class="bg"/>
+
+
+<rect x="60" y="45" width="880" height="200" rx="14" class="panel"/>
+
+
+<text x="110" y="105" class="gold" font-size="28">
+NEXT LEVEL
+</text>
+
+
+<text x="110" y="150" class="text" font-size="38">
+PRESS START TO CONNECT
+</text>
+
+
+<rect x="110" y="180" width="260" height="38"
+fill="#ff4fd8"
+class="button"/>
+
+
+<text x="135" y="206" fill="#ffffff" font-size="18">
+OPEN PROFILE
+</text>
+
+
+<text x="430" y="205" class="text" font-size="18">
+GITHUB  //  LINKEDIN
+</text>
+
+
+</svg>

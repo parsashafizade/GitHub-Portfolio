@@ -1,0 +1,51 @@
+name: Update Gaming Profile Assets
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 0 * * *"
+
+  push:
+    paths:
+      - "Gaming/scripts/**"
+      - "Gaming/assets/**"
+
+permissions:
+  contents: write
+
+jobs:
+  update-gaming:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+
+      - name: Generate Gaming SVG assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python Gaming/scripts/generate-gaming-profile.py
+
+
+      - name: Commit updated assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add Gaming/assets
+
+          git diff --cached --quiet || \
+          git commit -m "Update Gaming profile assets"
+
+          git push
