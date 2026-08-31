@@ -1,39 +1,28 @@
-name: Generate Contribution Snake
+name: Generate GitHub Snake
 
 on:
   schedule:
-    - cron: "0 */24 * * *"
-
+    - cron: "0 0 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   snake:
-
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
+      - uses: actions/checkout@v4
 
-      - name: Checkout
-        uses: actions/checkout@v4
-
-
-      - name: Generate snake
-        uses: Platane/snk@v3
+      - uses: Platane/snk@v3
         with:
-
           github_user_name: parsashafizade
-
           outputs: |
             Gaming/assets/snake/github-contribution-grid-snake.svg?palette=github-dark
+            Gaming/assets/snake/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-
-      - name: Commit snake
-        uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v9
         with:
-
           message: "Update contribution snake"
-
-          add: Gaming/assets/snake/github-contribution-grid-snake.svg
+          add: Gaming/assets/snake/

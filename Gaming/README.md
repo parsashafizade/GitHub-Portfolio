@@ -45,7 +45,11 @@
 
 <div align="center">
 
-<img src="./assets/activity/github-snake.svg" width="100%" alt="GitHub contribution snake" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/snake/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/snake/github-contribution-grid-snake.svg">
+  <img src="./assets/snake/github-contribution-grid-snake.svg" width="100%" alt="GitHub contribution snake" />
+</picture>
 
 </div>
 
