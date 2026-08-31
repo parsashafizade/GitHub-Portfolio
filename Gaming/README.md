@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/hero.svg" width="100%" alt="Parsa Shafizade Arcade Profile" />
+<img src="./assets/hero.svg" width="100%" alt="Gaming developer profile hero" />
 
 </div>
 
@@ -8,7 +8,7 @@
 
 <div align="center">
 
-<img src="./assets/player-card.svg" width="70%" alt="Player Card" />
+<img src="./assets/player-card.svg" width="75%" alt="Player card" />
 
 </div>
 
@@ -16,7 +16,7 @@
 
 <div align="center">
 
-<img src="./assets/loadout.svg" width="85%" alt="Developer Loadout" />
+<img src="./assets/loadout.svg" width="90%" alt="Developer loadout" />
 
 </div>
 
@@ -24,7 +24,7 @@
 
 <div align="center">
 
-<img src="./assets/project-select.svg" width="100%" alt="Project Mission Select" />
+<img src="./assets/project-select.svg" width="100%" alt="Project selection screen" />
 
 </div>
 
@@ -32,7 +32,7 @@
 
 <div align="center">
 
-<img src="./assets/stats-panel.svg" width="85%" alt="GitHub Stats Board" />
+<img src="./assets/stats-panel.svg" width="90%" alt="GitHub stats board" />
 
 </div>
 
@@ -40,19 +40,7 @@
 
 <div align="center">
 
-<img src="./assets/contribution-map.svg" width="100%" alt="GitHub Contribution Map" />
-<br/>
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/snake/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/snake/github-contribution-grid-snake.svg">
-  <img src="./assets/snake/github-contribution-grid-snake.svg" width="100%" alt="GitHub contribution snake" />
-</picture>
-
-</div>
-
+<img src="./assets/contribution-map.svg" width="100%" alt="Contribution activity map" />
 
 </div>
 
@@ -60,6 +48,14 @@
 
 <div align="center">
 
-<img src="./assets/footer-cta.svg" width="100%" alt="Continue Screen" />
+<img src="./assets/snake/github-contribution-grid-snake.svg" width="100%" alt="GitHub contribution snake" />
+
+</div>
+
+<br/>
+
+<div align="center">
+
+<img src="./assets/footer-cta.svg" width="100%" alt="Continue screen" />
 
 </div>
