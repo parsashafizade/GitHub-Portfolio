@@ -19,7 +19,7 @@ jobs:
         with:
           github_user_name: parsashafizade
           outputs: |
-            Gaming/assets/snake/github-contribution-grid-snake.svg?palette=github-dark
+            Gaming/assets/snake/github-contribution-grid-snake.svg
             Gaming/assets/snake/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - uses: EndBug/add-and-commit@v9
