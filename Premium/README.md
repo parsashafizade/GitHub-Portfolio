@@ -77,11 +77,11 @@ with the `profile-showcase` topic.
 -->
 
 <p align="center">
-  <a href="https://github.com/parsashafizade?tab=repositories"><img width="48%" src="./assets/projects/project-01.svg" alt="Featured project 1" /></a>
-  <a href="https://github.com/parsashafizade?tab=repositories"><img width="48%" src="./assets/projects/project-02.svg" alt="Featured project 2" /></a>
+  <a href="https://github.com/parsashafizade/Gorba"><img width="48%" src="./assets/projects/project-01.svg" alt="Featured project 1" /></a>
+  <a href="https://github.com/parsashafizade/OTP-Verification-micro-experience"><img width="48%" src="./assets/projects/project-02.svg" alt="Featured project 2" /></a>
   <br />
-  <a href="https://github.com/parsashafizade?tab=repositories"><img width="48%" src="./assets/projects/project-03.svg" alt="Featured project 3" /></a>
-  <a href="https://github.com/parsashafizade?tab=repositories"><img width="48%" src="./assets/projects/project-04.svg" alt="Featured project 4" /></a>
+  <a href="https://github.com/parsashafizade/raccoon-login-experience"><img width="48%" src="./assets/projects/project-03.svg" alt="Featured project 3" /></a>
+  <a href="https://github.com/parsashafizade/hardware-reserve"><img width="48%" src="./assets/projects/project-04.svg" alt="Featured project 4" /></a>
 </p>
 
 <div align="center">
