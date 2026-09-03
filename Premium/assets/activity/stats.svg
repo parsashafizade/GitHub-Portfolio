@@ -1,6 +1,6 @@
 <svg width="430" height="180" viewBox="0 0 430 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
 <title id="title">Parsa Shafizade GitHub Snapshot</title>
-<desc id="desc">Local public GitHub summary: 8 repositories, 5 stars, 1 forks, and 8 repositories pushed in the last 30 days.</desc>
+<desc id="desc">Local public GitHub summary: 8 repositories, 5 stars, 1 forks, and 7 repositories pushed in the last 30 days.</desc>
 
 
 <defs>
@@ -132,7 +132,7 @@
   <text x="180" y="111" fill="#E2E8F0" font-size="17" font-weight="760">1</text>
   <text x="180" y="125" fill="#64748B" font-size="7.4" font-weight="700">FORKS</text>
 
-  <text x="242" y="111" fill="#E2E8F0" font-size="17" font-weight="760">8</text>
+  <text x="242" y="111" fill="#E2E8F0" font-size="17" font-weight="760">7</text>
   <text x="242" y="125" fill="#64748B" font-size="7.4" font-weight="700">PUSHED / 30D</text>
 </g>
 
@@ -141,7 +141,7 @@
     <rect width="89" height="80" rx="12" fill="#0B1626" stroke="#334155"/>
 
     <text class="mono" x="12" y="18" fill="#64748B" font-size="6.8">LAST PUSH</text>
-    <text class="mono" x="12" y="34" fill="#BAE6FD" font-size="10" font-weight="700">SEP 02</text>
+    <text class="mono" x="12" y="34" fill="#BAE6FD" font-size="10" font-weight="700">SEP 03</text>
 
     <path class="trace" d="M12 57H29L37 48L48 61L60 52L77 52" stroke="#38BDF8" stroke-opacity=".68" stroke-width="1.2"/>
 
@@ -155,7 +155,7 @@
 <line x1="20" y1="144" x2="410" y2="144" stroke="#1E293B"/>
 
 <g class="mono reveal d3">
-  <text x="20" y="163" fill="#475569" font-size="7.4">UPDATED SEP 02, 2026 · UTC</text>
+  <text x="20" y="163" fill="#475569" font-size="7.4">UPDATED SEP 03, 2026 · UTC</text>
   <text x="320" y="163" fill="#7DD3FC" font-size="7.6" font-weight="700">LOCAL · AUTO-SYNCED</text>
 </g>
 </svg>
