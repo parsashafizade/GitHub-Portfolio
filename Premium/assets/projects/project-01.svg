@@ -1,6 +1,6 @@
 <svg width="430" height="180" viewBox="0 0 430 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Gorba</title>
-  <desc id="desc">Gorba Interactive Character-Driven Decision Experience A playful bilingual web experience built with React + TypeScript around a reactive kitten named Gorba . Gorba turns simple...</desc>
+  <title id="title">parsashafizade</title>
+  <desc id="desc">About I’m Parsa Shafizade , a Mobile Application Developer focused on building practical digital products with Flutter , product thinking , and AI-assisted development . I’m int...</desc>
 
   <defs>
     <linearGradient id="bg" x1="12" y1="7" x2="418" y2="176">
@@ -90,18 +90,18 @@
   <g class="sans reveal">
     <circle cx="23" cy="23" r="3.2" fill="#22D3EE" class="pulse"/>
     <text x="34" y="26.5" fill="#64748B" font-size="8.2"
-          font-weight="700" letter-spacing="1.15">RECENT PROJECT · TYPESCRIPT</text>
+          font-weight="700" letter-spacing="1.15">RECENT PROJECT · PYTHON</text>
     
 
     <text x="20" y="56" fill="#F8FAFC" font-size="16.6"
-          font-weight="760">Gorba</text>
+          font-weight="760">parsashafizade</text>
 
     <text x="20" y="79" fill="#CBD5E1" font-size="10.7">
-      Gorba Interactive Character-Driven Decision
+      About I’m Parsa Shafizade , a Mobile Application
     </text>
 
     <text x="20" y="94" fill="#94A3B8" font-size="10.7">
-      Experience A playful bilingual web experience bui…
+      Developer focused on building practical digital
     </text>
   </g>
 
@@ -125,28 +125,10 @@
 
   <g class="mono reveal d2">
     
-            <rect x="20.0" y="114" width="75.0" height="20" rx="7"
+            <rect x="20.0" y="114" width="52.2" height="20" rx="7"
                   fill="#101C2E" stroke="#334155"/>
             <text x="30.0" y="127" fill="#BAE6FD"
-                  font-size="7.5" font-weight="700">TypeScript</text>
-            
-
-            <rect x="101.0" y="114" width="36.0" height="20" rx="7"
-                  fill="#101C2E" stroke="#334155"/>
-            <text x="111.0" y="127" fill="#BAE6FD"
-                  font-size="7.5" font-weight="700">CSS</text>
-            
-
-            <rect x="143.0" y="114" width="40.8" height="20" rx="7"
-                  fill="#101C2E" stroke="#334155"/>
-            <text x="153.0" y="127" fill="#BAE6FD"
-                  font-size="7.5" font-weight="700">HTML</text>
-            
-
-            <rect x="189.8" y="114" width="75.0" height="20" rx="7"
-                  fill="#101C2E" stroke="#334155"/>
-            <text x="199.8" y="127" fill="#BAE6FD"
-                  font-size="7.5" font-weight="700">JavaScript</text>
+                  font-size="7.5" font-weight="700">Python</text>
             
   </g>
 
@@ -154,7 +136,7 @@
 
   <g class="mono reveal d3">
     <text x="20" y="165" fill="#64748B" font-size="7.8"
-          letter-spacing=".55">UPDATED AUG 30, 2026</text>
+          letter-spacing=".55">UPDATED SEP 04, 2026</text>
 
     <text x="326" y="165" fill="#7DD3FC" font-size="8.3"
           font-weight="700">View Repository ↗</text>

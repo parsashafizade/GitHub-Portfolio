@@ -1,6 +1,6 @@
 <svg width="430" height="180" viewBox="0 0 430 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">raccoon-login-experience</title>
-  <desc id="desc">A playful cross-platform login experience with a reactive raccoon mascot, built with React, TypeScript, and Flutter.</desc>
+  <title id="title">OTP-Verification-micro-experience</title>
+  <desc id="desc">Premium OTP verification prototype A frontend-only OTP verification micro experience built with React, CSS, and the Web Animations API. The component uses one semantic input for...</desc>
 
   <defs>
     <linearGradient id="bg" x1="12" y1="7" x2="418" y2="176">
@@ -94,14 +94,14 @@
     
 
     <text x="20" y="56" fill="#F8FAFC" font-size="16.6"
-          font-weight="760">raccoon-login-experience</text>
+          font-weight="760">OTP-Verification-micro-experience</text>
 
     <text x="20" y="79" fill="#CBD5E1" font-size="10.7">
-      A playful cross-platform login experience with a
+      Premium OTP verification prototype A frontend-only
     </text>
 
     <text x="20" y="94" fill="#94A3B8" font-size="10.7">
-      reactive raccoon mascot, built with React,
+      OTP verification micro experience built with React…
     </text>
   </g>
 
@@ -126,28 +126,28 @@
 
   <g class="mono reveal d2">
     
-            <rect x="20.0" y="114" width="82.0" height="20" rx="7"
+            <rect x="20.0" y="114" width="40.8" height="20" rx="7"
                   fill="#101C2E" stroke="#334155"/>
             <text x="30.0" y="127" fill="#BAE6FD"
-                  font-size="7.5" font-weight="700">Authentication…</text>
-            
-
-            <rect x="108.0" y="114" width="82.0" height="20" rx="7"
-                  fill="#101C2E" stroke="#334155"/>
-            <text x="118.0" y="127" fill="#BAE6FD"
-                  font-size="7.5" font-weight="700">Cross Platform</text>
-            
-
-            <rect x="196.0" y="114" width="40.8" height="20" rx="7"
-                  fill="#101C2E" stroke="#334155"/>
-            <text x="206.0" y="127" fill="#BAE6FD"
                   font-size="7.5" font-weight="700">Dart</text>
             
 
-            <rect x="242.8" y="114" width="36.0" height="20" rx="7"
+            <rect x="66.8" y="114" width="75.0" height="20" rx="7"
                   fill="#101C2E" stroke="#334155"/>
-            <text x="252.8" y="127" fill="#BAE6FD"
+            <text x="76.8" y="127" fill="#BAE6FD"
+                  font-size="7.5" font-weight="700">TypeScript</text>
+            
+
+            <rect x="147.8" y="114" width="36.0" height="20" rx="7"
+                  fill="#101C2E" stroke="#334155"/>
+            <text x="157.8" y="127" fill="#BAE6FD"
                   font-size="7.5" font-weight="700">CSS</text>
+            
+
+            <rect x="189.8" y="114" width="75.0" height="20" rx="7"
+                  fill="#101C2E" stroke="#334155"/>
+            <text x="199.8" y="127" fill="#BAE6FD"
+                  font-size="7.5" font-weight="700">JavaScript</text>
             
   </g>
 
@@ -155,7 +155,7 @@
 
   <g class="mono reveal d3">
     <text x="20" y="165" fill="#64748B" font-size="7.8"
-          letter-spacing=".55">UPDATED AUG 25, 2026</text>
+          letter-spacing=".55">UPDATED AUG 27, 2026</text>
 
     <text x="326" y="165" fill="#7DD3FC" font-size="8.3"
           font-weight="700">View Repository ↗</text>
