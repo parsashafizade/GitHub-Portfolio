@@ -78,8 +78,8 @@ with the `profile-showcase` topic.
 
   <br />
 
-  <a href="https://github.com/parsashafizade/Gorba"><img width="48%" src="./assets/projects/project-03.svg" alt="Featured project 3" /></a>
-  <a href="https://github.com/parsashafizade/OTP-Verification-micro-experience"><img width="48%" src="./assets/projects/project-04.svg" alt="Featured project 4" /></a>
+  <a href="https://github.com/parsashafizade/hardware-reserve"><img width="48%" src="./assets/projects/project-03.svg" alt="Featured project 3" /></a>
+  <a href="https://github.com/parsashafizade/Gorba"><img width="48%" src="./assets/projects/project-04.svg" alt="Featured project 4" /></a>
 
 </p>
 
