@@ -122,40 +122,40 @@
 
 <g class="reveal d2">
   <text class="sans" x="20" y="58" fill="#CBD5E1" font-size="9.2" font-weight="650">TypeScript</text>
-  <text class="mono" x="397" y="58" text-anchor="end" fill="#64748B" font-size="7.6">32.3%</text>
+  <text class="mono" x="397" y="58" text-anchor="end" fill="#64748B" font-size="7.6">33.3%</text>
 
   <rect x="126" y="51" width="194" height="6" rx="3" fill="#111C2D"/>
-  <rect x="126" y="51" width="62.7" height="6" rx="3" fill="#22D3EE" fill-opacity=".72"/>
+  <rect x="126" y="51" width="64.5" height="6" rx="3" fill="#22D3EE" fill-opacity=".72"/>
 
   <circle cx="334" cy="54" r="2.4" fill="#22D3EE" class="pulse"/>
 </g>
 
 <g class="reveal d2">
   <text class="sans" x="20" y="78" fill="#CBD5E1" font-size="9.2" font-weight="650">Dart</text>
-  <text class="mono" x="397" y="78" text-anchor="end" fill="#64748B" font-size="7.6">26.4%</text>
+  <text class="mono" x="397" y="78" text-anchor="end" fill="#64748B" font-size="7.6">25.9%</text>
 
   <rect x="126" y="71" width="194" height="6" rx="3" fill="#111C2D"/>
-  <rect x="126" y="71" width="51.1" height="6" rx="3" fill="#38BDF8" fill-opacity=".72"/>
+  <rect x="126" y="71" width="50.3" height="6" rx="3" fill="#38BDF8" fill-opacity=".72"/>
 
   <circle cx="334" cy="74" r="2.4" fill="#38BDF8" class="pulse"/>
 </g>
 
 <g class="reveal d2">
   <text class="sans" x="20" y="98" fill="#CBD5E1" font-size="9.2" font-weight="650">C#</text>
-  <text class="mono" x="397" y="98" text-anchor="end" fill="#64748B" font-size="7.6">24.0%</text>
+  <text class="mono" x="397" y="98" text-anchor="end" fill="#64748B" font-size="7.6">23.7%</text>
 
   <rect x="126" y="91" width="194" height="6" rx="3" fill="#111C2D"/>
-  <rect x="126" y="91" width="46.6" height="6" rx="3" fill="#3B82F6" fill-opacity=".72"/>
+  <rect x="126" y="91" width="45.9" height="6" rx="3" fill="#3B82F6" fill-opacity=".72"/>
 
   <circle cx="334" cy="94" r="2.4" fill="#3B82F6" class="pulse"/>
 </g>
 
 <g class="reveal d2">
   <text class="sans" x="20" y="118" fill="#CBD5E1" font-size="9.2" font-weight="650">Python</text>
-  <text class="mono" x="397" y="118" text-anchor="end" fill="#64748B" font-size="7.6">8.3%</text>
+  <text class="mono" x="397" y="118" text-anchor="end" fill="#64748B" font-size="7.6">8.1%</text>
 
   <rect x="126" y="111" width="194" height="6" rx="3" fill="#111C2D"/>
-  <rect x="126" y="111" width="16.0" height="6" rx="3" fill="#60A5FA" fill-opacity=".72"/>
+  <rect x="126" y="111" width="15.8" height="6" rx="3" fill="#60A5FA" fill-opacity=".72"/>
 
   <circle cx="334" cy="114" r="2.4" fill="#60A5FA" class="pulse"/>
 </g>
@@ -165,7 +165,7 @@
   <text class="mono" x="397" y="138" text-anchor="end" fill="#64748B" font-size="7.6">5.7%</text>
 
   <rect x="126" y="131" width="194" height="6" rx="3" fill="#111C2D"/>
-  <rect x="126" y="131" width="11.1" height="6" rx="3" fill="#818CF8" fill-opacity=".72"/>
+  <rect x="126" y="131" width="11.2" height="6" rx="3" fill="#818CF8" fill-opacity=".72"/>
 
   <circle cx="334" cy="134" r="2.4" fill="#818CF8" class="pulse"/>
 </g>
