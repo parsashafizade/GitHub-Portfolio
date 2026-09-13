@@ -142,7 +142,7 @@
 
 <g class="reveal d2">
   <text class="sans" x="20" y="98" fill="#CBD5E1" font-size="9.2" font-weight="650">C#</text>
-  <text class="mono" x="397" y="98" text-anchor="end" fill="#64748B" font-size="7.6">23.6%</text>
+  <text class="mono" x="397" y="98" text-anchor="end" fill="#64748B" font-size="7.6">23.5%</text>
 
   <rect x="126" y="91" width="194" height="6" rx="3" fill="#111C2D"/>
   <rect x="126" y="91" width="45.7" height="6" rx="3" fill="#3B82F6" fill-opacity=".72"/>
